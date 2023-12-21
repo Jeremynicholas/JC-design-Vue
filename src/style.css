@@ -1,0 +1,222 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+  }	
+
+  :root {
+    --dark: rgb(0 0 0 / 100%);
+    --light: rgb(255 255 255);
+    --grey: rgb(66 84 102);
+    --greyDark: rgb(168, 184, 201);
+    --bg-hover: rgb(0 0 0 / 80%);
+    --opacityHover: 0.8;
+    --accentBlue: rgb(87, 171, 255);
+
+    --background: #f6f9fc;
+    --background-dark: var(--dark); 
+    --background-light-hover: #dde9f9; 
+
+    --btn: var(--dark);
+    --btn-hover: var(--bg-hover);
+    --btnTransparent: rgba(0, 0, 0, 0);
+
+
+    --heading-color: var(--dark);
+    --font-color: var(--dark);
+    --font-reverse: var(--white);
+    --font-color-hover: var(--white);
+    --font-color-placeholder: rgb(115, 115, 115);
+
+    --border-color: rgb(208, 208, 208);
+    --columnPaddingNormal: 2rem;
+    --layoutWidthMax: 1080px ;
+    --layoutWidth: var(--layoutWidthMax);
+    --sectionPaddingBlock: 60px;
+    --gap: 15px;
+
+    --viewportMin: 600;
+    --viewportMax: 1112;
+
+    --scrollbarWidth: 17px;
+    --windowWidth: calc(100vw - var(--scrollbarWidth));
+
+    --font-family: "Helvetica Neue",sans-serif;
+    --font300: 300;
+    --font400: 400;
+    --font600: 600;
+
+    --fontSizeBody: 1.1rem;
+    --fontSizeButtons: 0.9rem;
+    --bodyFont: var(--font300) var(--fontSizeBody) / 1.8rem var(--font-family);
+    
+    --titleFontMin: 50;
+    --titleFontMax: 60;
+    --titleFont: calc(var(--titleFontMin)*1px + (var(--titleFontMax) - var(--titleFontMin))*(var(--windowWidth) - var(--viewportMin)*1px)/(var(--viewportMax) - var(--viewportMin)));
+    
+
+    --box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    --box-shadow-large: 0 50px 100px -20px rgba(50,50,93,0.25),0 30px 60px -30px rgba(0,0,0,0.3);
+
+    --timingAll: all 250ms ease;
+    --timingBackground: background 150ms ease;
+    --timingOpacity: opacity 150ms ease;
+  }
+
+  @media (min-width: 1200px) {
+    :root {
+      --titleFont: 4rem;
+  }
+}
+
+  @media (max-width: 767px) {
+    :root {
+      --columnPaddingNormal: 1rem;
+  }
+}
+
+  body {
+    color: var(--grey);
+    min-height: 100vh;
+    margin: 0px;
+    background: var(--background);
+  }
+  
+  body.dark {
+    color: var(--greyDark);
+    --accentBlue: rgb(72, 130, 188);
+  --background: #000;
+  --background-dark: rgb(202, 202, 202);
+  --heading-color: rgb(202, 202, 202);
+  --font-color: rgb(202, 202, 202);
+  --font-reverse: #000;
+  --font-color-hover: #000;
+  --font-color-placeholder: rgb(170, 170, 170); 
+  --border-color: #313131;
+  --btn: var(--grey);
+  --btnTransparent: rgb(170, 170, 170);
+  --btn-hover: var(--grey);
+  }
+  
+  body .theme .dark {
+	  display: none;
+  }
+  
+  body.dark .theme .light {
+	  display: none;
+  }
+  
+  body.dark .theme .dark {
+	  display: flex;
+    color: var(--font-color);
+  }
+
+	.theme::after {
+		visibility: hidden;
+	}
+
+a {
+  font-size: var(--fontSizeSmall);
+  font-weight: var(--font600);
+  font-family: var(--font-family);
+  color: var(--accentBlue)
+}
+
+span {
+  font-family: var(--font-family);
+}
+
+.body_font {
+  font: var(--bodyFont)
+}
+
+p {	
+  font: var(--bodyFont)
+}	
+
+h1 {
+	font-family: var(--font-family);
+	font-weight: var(--font600);
+	font-size: var(--titleFont);
+	color: var(--font-color);
+}
+
+h2 {
+	font-family: var(--font-family);	
+	color: var(--font-color);
+	margin: 20px 0px 10px 0px;
+	font-size: calc(30px + (42 - 30) * ((100vw - 300px) / (1600 - 300)));
+	font-weight: var(--font600);
+	line-height: 1.4;
+}	
+
+h3 {
+	font-family: var(--font-family);	
+	color: var(--font-color);
+	margin-bottom: 0px;
+	font-weight: var(--font600);
+}
+
+h4 {
+  font-family: var(--font-family);
+	font-weight: var(--font600);
+	color: var(--font-color-placeholder);
+}
+
+.h4-line-container {
+	display: flex;
+	align-items: center;
+}
+
+.h4-line {
+	display: flex;
+	border-bottom: 1.5px solid #000;
+	width: 20px;
+	margin-right: 10px;
+	border-color: var(--font-color-placeholder);
+}	
+
+.show-at-mob {
+	display: none;
+}
+
+main {
+  position: relative;
+  margin-top: 80px;
+}
+
+.section {
+  position: relative;
+  height: 100%;
+}
+
+.section_container {
+position: relative;
+z-index: 1;
+display: flex;
+justify-content: center;
+min-height: 20vh;
+
+}
+
+.section_container_width {
+width: 100%;
+max-width: calc(var(--columnPaddingNormal)*2 + var(--layoutWidth));
+margin: 0 auto;
+padding: 0 var(--columnPaddingNormal);
+}
+
+.section_container_layout {
+padding-block: var(--sectionPaddingBlock);
+}
+
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  min-height: 20vh;
+}
+

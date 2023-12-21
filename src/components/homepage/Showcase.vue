@@ -1,0 +1,108 @@
+<template>
+    <div class="flex-container">
+        <div class="home-container">
+                <h1 class="home-title"><span>Web solutions</span> for you and your business.</h1> 
+                <p class="body_font">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, accusamus temporibus. <a>Dicta animi tenetur voluptatibus nobis vitae?</a> Aperiam, dolores, optio odio nostrum itaque error illum, unde praesentium ad eum adipisci.</p> 
+            <div class="get-intouch-container">
+                <Button icon="fas fa-fw fa-envelope" text="Get in touch" url="#enquire" />
+                <ButtonCopy icon="fas fa-copy" text="Copy email" />
+            </div>
+            <div class ="social-icons show-at-mob">
+			<ul>
+				<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
+					<i class="fab fa-linkedin-in"></i></a></li>
+				<li><a href="https://dribbble.com/jemcam/" target="_blank" title="Go to Jeremy's Dribble profile">
+					<i class="fab fa-dribbble"></i></a></li>
+				<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+				</ul>
+		    </div>	
+        </div>	
+    </div>
+</template>
+
+<script setup >
+    import Button from '../Button.vue'
+    import ButtonCopy from '../ButtonCopy.vue'
+
+</script>
+
+<style scoped>
+    .home-title {
+        --MainFontMin: 50;
+        --MainFontMax: 80;
+        --MainFont: calc(var(--MainFontMin)*1px + (var(--MainFontMax) - var(--MainFontMin))*(var(--windowWidth) - var(--viewportMin)*1px)/(var(--viewportMax) - var(--viewportMin)));
+
+        font-size: var(--MainFont);
+        margin-bottom: 30px;
+    }
+
+    .home-title span {
+        mix-blend-mode: overlay;
+        color: var(--accent-pink);
+    }
+
+    @media (min-width: 1200px) {
+    .home-title {
+      --MainFont: 5rem;
+        }
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 600px;
+        gap: var(--gap)
+    }
+    .home-slider-container {
+	    overflow: hidden;
+    }
+    .text-slides {
+        display: flex;
+        height: 100%;
+    }
+    .text-slide {
+        min-width: 100%;
+    }
+
+    .text-slides h2 {
+        font-weight: var(--font300);
+        padding: 20px 0px 20px 0px;
+    }
+
+    .get-intouch-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: var(--gap);
+    }
+    
+    .social-icons {
+        position: absolute;
+        top: 50%;
+        right:10px;
+        z-index: 10;
+    }		
+
+    .social-icons ul li {
+        list-style: none;
+        text-align: center;
+        margin-top: 15px;
+    }
+        
+    .social-icons li a {
+        color: var(--font-color);
+        padding:  10px;
+        border-radius: 30%;
+        border: 1px solid var(--font-color);
+        display: block; 
+        transition: var(--timingAll);
+    }	
+
+    .social-icons li a:hover {
+        background: var(--btn-hover);
+        color: white; 
+    }    
+
+</style>
+
+
