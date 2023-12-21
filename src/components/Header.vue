@@ -262,7 +262,6 @@ header.sticky {
 		display: block;
 		cursor: pointer;
 		z-index: 10;
-		margin-right: 20px;
 	}
 
 	.burger div {
@@ -292,10 +291,6 @@ header.sticky {
 
 
 @media (max-width: 767px) {
-	.jc-logo:not(.show-at-mob) {
-		padding-left: 10px;
-	}
-
 	.jc-logo.show-at-mob {
 		position: absolute;
 		top: 10px;
@@ -305,7 +300,6 @@ header.sticky {
 	}
 
 	.main-menu {
-		padding: var(--columnPaddingNormal);
 		width: auto;
 	}
 

@@ -14,12 +14,12 @@ import { RouterLink } from 'vue-router';
 
 <style scoped>
 .jc-logo a {
-        display: flex;
+    display: flex;
 	align-items: center;
 	gap: 5px;
 	margin-right: auto;
 	height: 30px;
-        text-decoration: none;
+    text-decoration: none;
 }
 .jc-logo .svg {
 	fill: var(--font-color);

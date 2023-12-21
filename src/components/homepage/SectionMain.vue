@@ -29,7 +29,7 @@ body.dark .showcase_gradient {
         --gradientHeight: 100%;
         --transformOriginX: -60px;
         position: absolute;
-        width: var(--windowWidth);
+        width: 100%;
         height: 480px;
         transform-origin: var(--transformOriginX) 100%;
         transform: skewY(var(--gradientAngle));
