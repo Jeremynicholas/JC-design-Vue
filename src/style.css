@@ -18,6 +18,7 @@ html {
 
     --background: #f6f9fc;
     --background-dark: var(--dark); 
+    --background-light-blue: rgb(229, 242, 255);; 
     --background-light-hover: #dde9f9; 
 
     --btn: var(--dark);
@@ -37,6 +38,7 @@ html {
     --layoutWidth: var(--layoutWidthMax);
     --sectionPaddingBlock: 60px;
     --gap: 15px;
+    --gapLarge: 30px;
 
     --viewportMin: 600;
     --viewportMax: 1112;

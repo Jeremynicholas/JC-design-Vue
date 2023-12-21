@@ -47,6 +47,7 @@ body.dark .showcase_gradient {
         min-width: 1000px;
         width: 100%;
         height: 100%;
+        background: -webkit-linear-gradient(315deg, var(--gradientColorOne) 3%, var(--gradientColorTwo) 38%, var(--gradientColorTwo) 68%, var(--gradientColorFour) 98%);
         background: linear-gradient(315deg, var(--gradientColorOne) 3%, var(--gradientColorTwo) 38%, var(--gradientColorTwo) 68%, var(--gradientColorFour) 98%);
         animation: gradient 15s ease infinite;
         background-size: 400% 400%;
