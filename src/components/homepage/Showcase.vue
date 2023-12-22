@@ -1,13 +1,14 @@
 <template>
-    <div class="flex-container">
+    <div class="flex-row">
         <div class="home-container">
                 <h1 class="home-title"><span>Web solutions</span> for you and your business.</h1> 
-                <p class="body_font">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, accusamus temporibus. <a>Dicta animi tenetur voluptatibus nobis vitae?</a> Aperiam, dolores, optio odio nostrum itaque error illum, unde praesentium ad eum adipisci.</p> 
+                <p class="body_font">I am a client focused web designer with half a decade experience working closely with people and organisations to design, <a href="/#enquire">build and deliver a successful online presence.</a> I have a broad range of experience across the health, not-for profit and travel industries.
+</p> 
             <div class="get-intouch-container">
                 <Button icon="fas fa-fw fa-envelope" text="Get in touch" url="#enquire" />
                 <ButtonCopy icon="fas fa-copy" text="Copy email" />
             </div>
-            <div class ="social-icons show-at-mob">
+            <div class ="social-icons hide-at-mob-large">
 			<ul>
 				<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
 					<i class="fab fa-linkedin-in"></i></a></li>
@@ -73,13 +74,14 @@
     .get-intouch-container {
         display: flex;
         justify-content: flex-start;
+        margin-top: var(--gap);
         gap: var(--gap);
     }
     
     .social-icons {
         position: absolute;
         top: 50%;
-        right:10px;
+        right: 10px;
         z-index: 10;
     }		
 
@@ -90,11 +92,16 @@
     }
         
     .social-icons li a {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
         color: var(--font-color);
+        font-size: var(--fontSizeButtons);
         padding:  10px;
-        border-radius: 30%;
+        height: 20px;
+        width: 20px;
+        border-radius: var(--border-radius);
         border: 1px solid var(--font-color);
-        display: block; 
         transition: var(--timingAll);
     }	
 

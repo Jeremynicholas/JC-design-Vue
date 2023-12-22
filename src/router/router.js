@@ -9,8 +9,8 @@ const routes = [
         meta: { 
             title: `${SITE_NAME} | Home Page`,
             pageTitle: 'Home Page', 
+            description: 'This is the description for the home page.',
         }, 
-        description: 'This is the description for the home page.',
     },
 
     {
@@ -20,8 +20,8 @@ const routes = [
         meta: {
             title: `${SITE_NAME} | About Page`,
             pageTitle: 'About me', 
+            description: 'This is the description for the about page.',
         },
-        description: 'This is the description for the about page.',
     },
     {
         path: '/pricing',
@@ -30,8 +30,8 @@ const routes = [
         meta: {
             title: `${SITE_NAME} | Pricing Page`,
             pageTitle: 'Pricing', 
+            description: 'This is the description for the Pricing page.',
         },
-        description: 'This is the description for the Pricing page.',
     },
     {
         path: '/work',
@@ -40,8 +40,8 @@ const routes = [
         meta: {
             title: `${SITE_NAME} | Work Page`,
             pageTitle: 'My Work', 
+            description: 'This is the description for the Clients page.',
         },
-        description: 'This is the description for the Clients page.',
     },
 ]
 

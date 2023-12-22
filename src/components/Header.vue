@@ -3,7 +3,7 @@
         <div class ="site_container">
 			<nav class="nav-header">
                     <Logo />
-					<div class="burger">
+					<div class="burger show-at-mob-large">
 						<div class="burger-top"></div>
 						<div class="burger-middle"></div>
 						<div class="burger-bottom"></div>
@@ -16,7 +16,7 @@
 								<li><router-link :to="{name: 'pricing'}">Pricing</router-link></li>
 								<li><router-link :to="{name: 'work'}">Work</router-link></li>
 								<li><router-link :to="{path: '/#enquire'}">Get in touch</router-link></li>
-							<ul class ="social-icons-mobile">
+							<ul class ="social-icons-mobile show-at-mob-large">
 								<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
 									<i class="fab fa-linkedin-in"></i></a></li>
 								<li><a href="https://dribbble.com/jemcam/" target="_blank" title="Go to Jeremy's Dribble profile">
@@ -192,10 +192,6 @@ header.sticky {
 .nav-links  li:hover::after {	
 	width: 100%;
 }
-
-.burger, .social-icons-mobile {
-	display: none;
-}	
 
 /*-----MEDIA QUERIES @ 1024px-----*/	
 @media (max-width: 1024px) {

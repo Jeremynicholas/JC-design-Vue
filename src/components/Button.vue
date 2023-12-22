@@ -18,8 +18,9 @@
     .buttons {
         background: var(--btn);
         color: white;
+        font-size: var(--fontSizeButtons);
         padding: 10px 15px;
-        border-radius: 50px;
+        border-radius: var(--border-radius-buttons);
         box-shadow: var(--box-shadow);
         text-decoration: none;
         cursor: pointer;
@@ -55,4 +56,11 @@
     .buttons:hover .arrow__tip, button:hover .arrow__tip {
         transform: translateX(3px);
     }
+
+    /* @media (max-width: 767px) {
+        .buttons i {
+            display: none;
+        }
+    } */
+
 </style>

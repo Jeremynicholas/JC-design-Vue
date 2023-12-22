@@ -7,8 +7,8 @@
                 <path class="arrow__tip" d="M1 1l4 4-4 4"></path>   
             </g>
         </svg>
+        <span class="tooltip">Copied!</span>
     </a>
-    <span class="tooltip">Copied!</span>
 </template>
 
 <script setup>
@@ -36,11 +36,13 @@ import { defineProps } from 'vue';
 
 <style scoped>
     .button_copy {
+        position: relative;
         border: 3px solid var(--btn);
         background: var(--btnTransparent);
         color: var(--btn);
+        font-size: var(--fontSizeButtons);
         padding: 8px 15px;
-        border-radius: 50px;
+        border-radius: var(--border-radius-buttons);
         box-shadow: var(--box-shadow);
         cursor: pointer;
         transition: var(--timingAll);
@@ -79,17 +81,40 @@ import { defineProps } from 'vue';
 
     .tooltip {
         position: absolute;
-        right: 210px;
-        top: 0;
+        right: 0;
+        top: -10px;
+        transform: translate(-50%, -100%);
         visibility: hidden;
         transition: .5s;
+        background: var(--background-light-blue);
+        border-radius: var(--border-radius);
+        padding: 5px;
+        color: var(--font-color);
+        font-size: var(--fontSizeTiny);
+        box-shadow: var(--box-shadow);
     }
 
-    .tooltip span {
-        color: var(--font-color);
+    .tooltip::after {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 50%;
+        content: '';
+        background: var(--background-light-blue);
+        height: 10px;
+        width: 10px;
+        display: block;
+        transform: translateX(-50%) rotate(45deg);
     }
 
     .tooltip.show {
         visibility: visible;
     }	
+
+    /* @media (max-width: 767px) {
+        .button_copy i {
+            display: none;
+        }
+    } */
+
 </style>

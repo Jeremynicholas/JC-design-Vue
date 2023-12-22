@@ -2,6 +2,7 @@
     <section class ="section">
         <div class ="section_container">
             <div class="showcase_gradient">
+                <canvas class="canvas" width="516" height="600"></canvas>
             </div>
             <div class="section_container_width">
                 <div class="section_container_layout">
@@ -25,19 +26,26 @@ body.dark .showcase_gradient {
         --gradientColorTwo: #90e0ff;
         --gradientColorThree: #ffcb57;
         --gradientColorFour: #ab5acd;
-        --gradientAngle: -12deg;
-        --gradientHeight: 100%;
-        --transformOriginX: -60px;
         position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
         width: 100%;
         height: 480px;
-        transform-origin: var(--transformOriginX) 100%;
-        transform: skewY(var(--gradientAngle));
+        transform-origin: -60px 100%;
+        transform: skewY(-12deg);
         overflow: clip;
         z-index: -1;
         border: none;   
     }
-    .showcase_gradient:after {
+
+    .canvas {
+        position: relative;
+        display: block;
+        width: inherit;
+        height: 100%;
+    }
+    .showcase_gradient::after {
         content: "";
         z-index: -1;
         position: absolute;
@@ -49,7 +57,8 @@ body.dark .showcase_gradient {
         height: 100%;
         background: -webkit-linear-gradient(315deg, var(--gradientColorOne) 3%, var(--gradientColorTwo) 38%, var(--gradientColorTwo) 68%, var(--gradientColorFour) 98%);
         background: linear-gradient(315deg, var(--gradientColorOne) 3%, var(--gradientColorTwo) 38%, var(--gradientColorTwo) 68%, var(--gradientColorFour) 98%);
-        animation: gradient 15s ease infinite;
+        animation: gradient 50s ease infinite;
+        background: radial-gradient(var(--gradientColorOne) 40%,var(--gradientColorTwo) 60%) -620px -180px no-repeat,radial-gradient(var(--gradientColorThree) 33%,var(--gradientColorFour) 67%) -120px -24px no-repeat,radial-gradient(var(--gradientColorOne) 40%,var(--gradientColorThree) 70%) -470px 150px no-repeat,var(--gradientColorFour);
         background-size: 400% 400%;
         background-attachment: fixed;
     }
@@ -64,5 +73,12 @@ body.dark .showcase_gradient {
     100% {
         background-position: 0% 0%;
     }
+    }
+
+    @media (max-width: 767px) {
+        .showcase_gradient {
+            height: 300px;
+        }
+
     }
 </style>

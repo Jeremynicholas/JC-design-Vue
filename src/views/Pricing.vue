@@ -1,17 +1,12 @@
 <template>
-<section class ="section">
-        <div class ="section_container">
-            <div class="section_container_width">
-                <div class="section_container_layout">
-                    <h1>Pricing</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+  <ShowcaseSub />
+  <Sections>
+  </Sections>
 </template>
 
 <script setup >
-
+  import Sections from '../components/Sections.vue'
+  import ShowcaseSub from '../components/ShowcaseSub.vue'
 </script>
 
 
