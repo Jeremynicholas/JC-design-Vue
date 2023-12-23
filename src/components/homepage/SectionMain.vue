@@ -77,7 +77,7 @@ body.dark .showcase_gradient {
 
     @media (max-width: 767px) {
         .showcase_gradient {
-            height: 300px;
+            height: 270px;
         }
 
     }

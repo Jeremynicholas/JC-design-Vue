@@ -57,10 +57,10 @@
         transform: translateX(3px);
     }
 
-    /* @media (max-width: 767px) {
+    @media (max-width: 767px) {
         .buttons i {
             display: none;
         }
-    } */
+    }
 
 </style>

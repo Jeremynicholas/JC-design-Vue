@@ -29,7 +29,7 @@
 
 <style scoped>
     .home-title {
-        --MainFontMin: 50;
+        --MainFontMin: 54;
         --MainFontMax: 80;
         --MainFont: calc(var(--MainFontMin)*1px + (var(--MainFontMax) - var(--MainFontMin))*(var(--windowWidth) - var(--viewportMin)*1px)/(var(--viewportMax) - var(--viewportMin)));
 

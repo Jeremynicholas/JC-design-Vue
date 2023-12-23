@@ -41,6 +41,16 @@ import { RouterLink } from 'vue-router';
 			color: var(--accentBlue);
 		}
 	}
+
+	.jc-logo {
+		& .svg {
+			height: 22px;
+		}
+
+		& span {
+			font-size: 24px;
+		}
+	}
 }
 
 

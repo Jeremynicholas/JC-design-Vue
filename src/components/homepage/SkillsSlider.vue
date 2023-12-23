@@ -149,4 +149,10 @@ function reverseAnimation() {
         transform: translateX(3px);
     }
 
+
+    @media (max-width: 767px) {
+        .skill-list li {
+            padding: 0.5rem;
+        }
+    }
 </style>

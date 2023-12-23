@@ -111,10 +111,10 @@ import { defineProps } from 'vue';
         visibility: visible;
     }	
 
-    /* @media (max-width: 767px) {
+    @media (max-width: 767px) {
         .button_copy i {
             display: none;
         }
-    } */
+    }
 
 </style>
