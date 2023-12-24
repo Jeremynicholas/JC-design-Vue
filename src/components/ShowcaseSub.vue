@@ -48,7 +48,7 @@ body.dark .showcase_gradient {
         --gradientColorOne: #8bb44e;
         --gradientColorTwo: #90e0ff;
         
-        position: absolute;
+        position: relative;
         top: 0;
         bottom: 0;
         left: 0;

@@ -1,11 +1,11 @@
 <template>
       <Header />
       <main>
-        <RouterView />
-      </main>
-    <Sections>
-      <Footer />
-    </Sections>
+          <RouterView />
+          <Sections>
+            <Footer />
+          </Sections>
+  </main>
 </template>
 
 <script setup >

@@ -25,7 +25,8 @@
         text-decoration: none;
         cursor: pointer;
         transition: var(--timingAll);
-        }
+    }
+
     .buttons:hover {
         background: var(--btn-hover);  
     }

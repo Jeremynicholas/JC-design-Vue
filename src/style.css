@@ -36,6 +36,7 @@ html {
     --border-radius: 5px;
     --border-radius-buttons: 50px;
 
+    --columnPaddingInline: 1rem;
     --columnPaddingNormal: 2rem;
     --layoutWidthMax: 1080px ;
     --layoutWidth: var(--layoutWidthMax);
@@ -58,12 +59,14 @@ html {
     --fontSizeButtons: 0.9rem;
     --fontSizeTiny: 0.7rem;
     --bodyFont: var(--font300) var(--fontSizeBody) / 1.8rem var(--font-family);
+    --fontSizeFooter: 0.9rem;
     
     --titleFontMin: 50;
     --titleFontMax: 60;
     --titleFont: calc(var(--titleFontMin)*1px + (var(--titleFontMax) - var(--titleFontMin))*(var(--windowWidth) - var(--viewportMin)*1px)/(var(--viewportMax) - var(--viewportMin)));
     
 
+    --box-shadow-light: 0 5px 10px 0 rgba(0,0,0,0.1);
     --box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     --box-shadow-large: 0 50px 100px -20px rgba(50,50,93,0.25),0 30px 60px -30px rgba(0,0,0,0.3);
 
@@ -75,6 +78,13 @@ html {
   @media (min-width: 1200px) {
     :root {
       --titleFont: 4rem;
+  }
+}
+
+  @media (max-width: 767px) {
+    :root {
+      --gapLarge: 20px;
+  
   }
 }
 
@@ -209,7 +219,7 @@ justify-content: center;
 
 .section_container_width {
 width: 100%;
-max-width: calc(var(--columnPaddingNormal)*2 + var(--layoutWidth));
+max-width: var(--layoutWidth);
 margin: 0 auto;
 padding: 0 var(--columnPaddingNormal);
 overflow: hidden;
@@ -236,5 +246,34 @@ padding-block: var(--sectionPaddingBlock);
 .grid {
   display: grid;
   gap: var(--gapLarge)
+}
+
+.grid_2_columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--columnPaddingNormal);
+}
+
+.grid_3_columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--columnPaddingNormal);
+}
+
+@media (max-width: 1024px) {
+	.grid_3_columns {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 767px) {
+	.grid_2_columns, .grid_3_columns {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+.columns {
+  row-gap: var(--gapLarge);
+  padding-inline: var(--columnPaddingInline);
 }
 

@@ -1,5 +1,5 @@
 <template>
-        <ul class="sites">
+        <ul class="sites grid_3_columns">
             <ClientCards :sites="sites" />
         </ul>
 </template>
@@ -36,9 +36,5 @@ const sites = ref ([
 </script>
 
 <style>
-    .sites {
-        display: grid;
-        grid-template-columns: repeat(4, auto);
-        gap: 30px
-    }
+
 </style>

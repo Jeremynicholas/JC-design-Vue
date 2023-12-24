@@ -1,5 +1,6 @@
 <template>
     <section class ="section">
+        <gridLines />
         <div class ="section_container">
             <div class="showcase_gradient">
                 <canvas class="canvas" width="516" height="600"></canvas>
@@ -12,6 +13,10 @@
         </div>
     </section>
 </template>
+
+<script setup>
+ import gridLines from '../../components/gridLines.vue'
+</script>
 
 
 <style scoped>

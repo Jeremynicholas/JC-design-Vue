@@ -1,30 +1,29 @@
 <template>
-    <Sections id="main-footer">
-		<div class="back-to-top-container">
-			<a class="back-to-top" href="#top" title="Back to top">Back to top</a>
-		</div>
-			<div class="footer-logo-container">
+    <footer id="main-footer" class="grid_3_columns">
+				<a class="back-to-top" href="#top" title="Back to top">Back to top</a>
+			<div class="footer-grid footer-logo-container">
 				<logo />
+				<p class="footer-copy">Copyright &copy; JC Design {{ currentYear }}</p>
 			</div>	
-			<div class="footer-menu">
+			<div class="footer-grid footer-menu">
 				<ul>
                     <li><router-link :to="{path: 'about'}">About</router-link></li>
 					<li><router-link :to="{name: 'pricing'}">Pricing</router-link></li>
 					<li><router-link :to="{name: 'work'}">Work</router-link></li>
 					<li><router-link :to="{path: '/#enquire'}">Get in touch</router-link></li>
 				</ul>
-                <div class="get-intouch-container">
-                    <ButtonCopy icon="fas fa-copy" text="Copy email" />
-                </div>
 			</div>
-		<p>Copyright &copy; JC Design {{ currentYear }}</p>
-    </Sections>
+			<div class="footer-grid get-intouch-container">
+                    <Button icon="fas fa-envelope" text="Get in touch" url="mailto:jncameron1@hotmail.com" />
+                    <ButtonCopy icon="fas fa-copy" text="Copy email" />
+            </div>
+    </footer>
 </template>
 
 <script setup >
     import { ref, onMounted } from 'vue';
-    import Sections from '../components/Sections.vue'
     import Logo from './Logo.vue';
+    import Button from './Button.vue'
     import ButtonCopy from './ButtonCopy.vue'
 
     const currentYear = ref('');
@@ -36,101 +35,78 @@
 
 
 <style scoped>
-.back-to-top-container {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-
 .back-to-top {
+	position: absolute;
+	top: 5px;
+	right: 5px;
 	color: var(--font-color);
 	text-decoration: none;
-	font-size: .8em;
+	font-size: var(--fontSizeTiny);
 	margin-bottom: 0;
 	transition: 250ms ease;
 }
 
 .back-to-top:hover {
-	font-size: 15px;
+	opacity: var(--opacityHover);
 }
 
-#main-footer {
-	position: relative;
-	background: var(--background-color);
-	margin-top: 100px;
-	text-align: center;
-	font-size: 18px;
+.footer-grid {
+	display: grid;
+	grid: min-content/auto;
+	justify-items: start;
 }
-
-#main-footer p {		
-	color: var(--font-reverse);
-	font-size: 14px;
-}
-
-#main-footer .jc-logo {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-#main-footer .jc-logo svg {
-	fill: var(--font-reverse);
-}
-
-#main-footer .jc-logo span {
-	color: var(--font-reverse);
-}
-
-.footer-border {
-	border-bottom: solid;
-	border-width: thin;
-	border-color: var(--font-reverse);
-	width: 50%;
-	margin: 20px auto;
-}	
 
 .footer-logo-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 30px;
+	grid-template-rows: auto min-content;
+}	
+
+.footer-copy {
+	font-size: var(--fontSizeFooter);
+	color: var(--font-color);
 }
 
-.footer-menu{
-	display:flex;
-	justify-content: center;
-	text-align: center;
-	margin-bottom: 30px;
-}		
-
-.footer-menu ul {
-	padding-left: 0px;
-}
-
-.footer-menu ul li{
+.footer-menu ul li {
 	list-style: none;
-	display: inline-block;
-	padding: 8px 20px;
-	position: relative;
+	font-size: var(--fontSizeFooter);
+	color: var(--font-color);
 }
-
 
 .footer-menu a {	
-	color: var(--font-reverse);
-	text-decoration: none;
+	font-size: var(--fontSizeFooter);
+	color: var(--font-color);
 }
 
-.footer-menu li a::after{
-	content: '';	
-	width:0%;
-	height: 2px;
-	background: white;
-	display: block;
-	margin: auto;
-	transition:0.3s;
-}
-
-.footer-menu li a:hover::after{	
-	width: 100%;
+.footer-menu li a:hover {	
+	opacity: var(--opacityHover);
 }	
+
+.get-intouch-container {
+	gap: var(--gap);
+	align-items: baseline;
+}
+
+@media (max-width: 1024px) {
+	.footer-logo-container {
+		grid-row: span 2;
+	}
+
+	.footer-menu {
+    grid-column: 2;
+  }
+  
+  .get-intouch-container {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 767px) {
+	.footer-menu {
+    grid-column: 1;
+  }
+  
+  .get-intouch-container {
+    grid-column: 1;
+  }
+}
+
 </style>

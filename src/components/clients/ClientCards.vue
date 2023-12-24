@@ -28,6 +28,7 @@
         border: 2px solid var(--accent-blue);
         transition: var(--timingAll);
         text-align: center;
+        box-shadow: var(--box-shadow-light);
 
         a {
             text-decoration: none;

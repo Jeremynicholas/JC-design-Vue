@@ -1,5 +1,6 @@
 <template>
     <section class ="section">
+        <gridLines />
         <div class ="section_container">
             <div class="section_container_width">
                 <div class="section_container_layout">
@@ -10,5 +11,6 @@
     </section>
 </template>
 
-<style>
-</style>
+<script setup>
+ import gridLines from '../components/gridLines.vue'
+</script>
