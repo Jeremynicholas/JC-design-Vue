@@ -8,23 +8,17 @@
 			<div class="footer-grid footer-menu">
 				<ul>
                     <li><router-link :to="{path: 'about'}">About</router-link></li>
-					<li><router-link :to="{name: 'pricing'}">Pricing</router-link></li>
-					<li><router-link :to="{name: 'work'}">Work</router-link></li>
+					<li><router-link :to="{path: 'pricing'}">Pricing</router-link></li>
+					<li><router-link :to="{path: 'work'}">Work</router-link></li>
 					<li><router-link :to="{path: '/#enquire'}">Get in touch</router-link></li>
 				</ul>
 			</div>
-			<div class="footer-grid get-intouch-container">
-                    <Button icon="fas fa-envelope" text="Get in touch" url="mailto:jncameron1@hotmail.com" />
-                    <ButtonCopy icon="fas fa-copy" text="Copy email" />
-            </div>
     </footer>
 </template>
 
 <script setup >
     import { ref, onMounted } from 'vue';
     import Logo from './Logo.vue';
-    import Button from './Button.vue'
-    import ButtonCopy from './ButtonCopy.vue'
 
     const currentYear = ref('');
 

@@ -43,6 +43,16 @@ const routes = [
             description: 'This is the description for the Clients page.',
         },
     },
+    {
+        path: '/:pathMatch(.*)*',
+        name: '404',
+        component: () => import('../views/404.vue'),
+        meta: {
+            title: `${SITE_NAME} | 404 Page`,
+            pageTitle: 'Oops wrong page', 
+            description: "Looks like you've followed a broken link or entered a URL that doesn't exist on this site.",
+        },
+    },
 ]
 
 const router = createRouter({
@@ -55,4 +65,6 @@ router.beforeEach((to, from, next) => {
     next();
   });
 
-export default router;
+export default new createRouter ({
+    history: createWebHistory(), routes
+});
