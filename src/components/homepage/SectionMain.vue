@@ -60,7 +60,7 @@ body.dark .showcase_gradient {
         height: 100%;
         background: -webkit-linear-gradient(315deg, var(--gradientColorOne) 3%, var(--gradientColorTwo) 38%, var(--gradientColorTwo) 68%, var(--gradientColorFour) 98%);
         background: linear-gradient(315deg, var(--gradientColorOne) 3%, var(--gradientColorTwo) 38%, var(--gradientColorTwo) 68%, var(--gradientColorFour) 98%);
-        /* background: radial-gradient(var(--gradientColorOne) 40%,var(--gradientColorTwo) 60%) -620px -180px no-repeat,radial-gradient(var(--gradientColorThree) 33%,var(--gradientColorFour) 67%) -120px -24px no-repeat,radial-gradient(var(--gradientColorOne) 40%,var(--gradientColorThree) 70%) -470px 150px no-repeat,var(--gradientColorFour); */
+        background: radial-gradient(var(--gradientColorOne) 40%,var(--gradientColorTwo) 60%) -620px -180px no-repeat, radial-gradient(var(--gradientColorThree) 33%,var(--gradientColorFour) 67%);
         background-size: 400% 400%;
         background-attachment: fixed;
         animation: gradient 50s ease infinite;

@@ -20,7 +20,9 @@ const routes = [
         meta: {
             title: `${SITE_NAME} | About Page`,
             pageTitle: 'About me', 
-            description: 'This is the description for the about page.',
+            description: `<p>JC Design is a <span>online web services company</span> dedicated to providing quality & innovative digital design.</p>
+            <p>Our products are designed to optimise your business and improve your efficiency. JC Design separates itself by partnering with you to achieve your objectives with a<span>personal and flexible approach</span>.</p>`,
+            imgSrc: '/public/images/web-design-logo.png',
         },
     },
     {
@@ -31,6 +33,8 @@ const routes = [
             title: `${SITE_NAME} | Pricing Page`,
             pageTitle: 'Pricing', 
             description: 'This is the description for the Pricing page.',
+            imgSrc: '/public/images/graphic-design-logo.png',
+
         },
     },
     {
@@ -51,14 +55,30 @@ const routes = [
             title: `${SITE_NAME} | 404 Page`,
             pageTitle: 'Oops wrong page', 
             description: "Looks like you've followed a broken link or entered a URL that doesn't exist on this site.",
-        },
+        },        
+    },
+
+    {
+        path: '/thanks',
+        name: 'success',
+        component: () => import('../components/forms/SubmissionSuccess.vue'),
+    },
+    {
+        path: '/fail',
+        name: 'fail',
+        component: () => import('../components/forms/SubmissionFail.vue'),
     },
 ]
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition) {    
+        return { x: 0, y: 0 };
+    }
+    
 })
+
 
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title || SITE_NAME;

@@ -82,7 +82,7 @@
     import SectionsNoPadding from '../components/SectionsNoPadding.vue'
     import SkillsSlider from '../components/homepage/SkillsSlider.vue'
     import AnchorLine from '../components/AnchorLine.vue'
-    import ContactForm from '../components/ContactForm.vue'
+    import ContactForm from '../components/forms/ContactForm.vue'
 </script>
 
 <style>

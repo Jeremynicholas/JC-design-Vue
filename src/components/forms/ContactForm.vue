@@ -1,0 +1,152 @@
+<template>
+    <div class="form-style">
+        <form class ="contact-form"
+              name="contact-form"
+              method="post" 
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              @submit.prevent="handleSubmit">
+          
+          <div class="form-field">
+            <label>Name</label>
+            <input v-model="form.name" type="text" name="name" placeholder="Name" required>
+            </div>
+          <div class="form-field">
+            <label>Email</label>
+            <input v-model="form.email" type="email" name="email" placeholder="Email Address" required>
+            </div>
+
+          <div class="form-field">
+            <label>Message</label>
+            <textarea v-model="form.message" name="message" rows="3" placeholder="message (optional)"></textarea>
+            </div>
+          
+          <div class="form-field">		
+            <label>Budget</label>	
+            <textarea v-model="form.budget" name="budget" rows="0" placeholder="budget (optional)"></textarea>
+            </div>
+          <div>	
+            <button class="submit_btn" type="submit" name="submit">Enquire Now</button>
+            </div>
+        </form>	
+        <div v-if="successMessage">{{ successMessage }}</div>
+        <div v-if="errorMessage">{{ errorMessage }}</div>
+      </div>
+</template>
+
+<script setup>
+import axios from "axios";
+import { ref } from 'vue';
+
+const form = ref({
+  name: '',
+  email: '',
+  message: '',
+  budget: ''
+});
+
+const successMessage = ref('');
+const errorMessage = ref('');
+
+const handleSubmit = () => {
+  const axiosConfig = {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" }
+  };
+
+  axios.post(
+    "/", // Update with the correct URL
+    encode({
+      'form-name': 'contact-form',
+      ...form.value,
+    }),
+    axiosConfig
+  )
+  .then(() => {
+    // Update UI for success
+    successMessage.value = 'Form submitted successfully!';
+    errorMessage.value = '';
+  })
+  .catch((error) => {
+    console.error("Error submitting form:", error);
+
+    // Update UI for failure
+    successMessage.value = '';
+    errorMessage.value = 'Error submitting form. Please try again.';
+  });
+};
+
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
+};
+</script>
+
+
+<style scoped>
+  .form-style {
+	position: relative;
+    width: 100%;
+	text-align: left;
+}		
+
+.form-field	{
+	padding:10px 0px 10px 0px;
+}
+
+
+.form-field label	{
+	display: none;
+	border: none;
+	width: 100%;
+}		
+
+.form-field input	{
+	background: var(--background);
+	border-width: 0px 0px 2px 0px;
+	border-color: var(--font-color-placeholder);
+	color: var(--font-color);
+	font: var(--bodyFont);
+	padding: 10px 0px 10px 0px;
+	width: 100%;
+}	
+
+::-webkit-input-placeholder	{
+	color: var(--font-color-placeholder);
+}
+
+.form-field textarea	{
+	background: var(--background);
+	border-width: 0px 0px 2px 0px;
+	border-color: var(--font-color-placeholder);
+	font: var(--bodyFont);
+	color: var(--font-color);
+	width: 100%;
+	outline: none;
+  resize: none;
+}	
+
+
+.form-field input:focus-visible {
+	outline: none;
+}	
+
+.submit_btn {
+        margin-top: 20px;
+        background: var(--btn);
+        color: white;
+        font-size: var(--fontSizeButtons);
+        padding: 10px 15px;
+        border: none;
+        border-radius: var(--border-radius-buttons);
+        box-shadow: var(--box-shadow);
+        text-decoration: none;
+        cursor: pointer;
+        transition: var(--timingAll);
+    }
+
+    .submit_btn:hover {
+        background: var(--btn-hover);  
+    }
+
+</style>

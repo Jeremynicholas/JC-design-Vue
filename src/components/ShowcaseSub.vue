@@ -1,45 +1,64 @@
 <template>
-     <section class ="section">
-        <div class ="section_container">
-            <div class="showcase_gradient">                
+     <section :id="$route.name" class ="section">
+        <div class ="section_container">          
             <div class="section_container_width">
                 <div class="section_container_layout">
-                    <div class="flex-row">
-                        <div class="home-container">
-                            <h1>{{ pageTitle }}</h1>
-                            <p>{{ description }}</p>
+                    <AnchorLine :AnchorText="anchorText" />
+                        <div class="grid_2_columns">
+                            <div class="columns">
+                                <h1>{{ pageTitle }}</h1>
+                                <p v-html="$route.meta.description" class="description"></p>
+                                <Button icon="fas fa-fw fa-envelope" text="Get in touch" url="/#enquire" />
+                            </div>
+                    
+                            <div class="columns">			
+                                <img :src="$route.meta.imgSrc" :alt="$route.meta.pageTitle"/>
+                            </div>
                         </div>	
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
     </section>
         
 </template>
 
 <script setup >
-import { ref, onMounted, watch } from 'vue';
+import Button from '../components/Button.vue'
+import AnchorLine from '../components/AnchorLine.vue'
+import { ref, onMounted, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 const pageTitle = ref('');
 const description = ref('');
 const route = useRoute();
 
-watch(() => route.name, (newName, newDescription) => {
-    pageTitle.value = newName
-    description.value = newDescription
+const anchorText = computed(() => {
+    return route.name.charAt(0).toUpperCase() + route.name.slice(1);
+})
+
+watch(() => route.name, (newMeta) => {
+    pageTitle.value = newMeta.pageTitle
+    description.value = newMeta.description
 });
 
 onMounted(() => {
   pageTitle.value = route.meta.pageTitle
   description.value = route.meta.description
+
 });
 
 </script>
 
 <style scoped>
-body.dark .showcase_gradient {
+.grid_2_columns .columns img {
+    max-width: 100%;
+}
+
+.description p span {
+    color: red!important;
+}
+
+/* body.dark .showcase_gradient {
     --gradientColorOne: #4a6028;
     --gradientColorTwo: #2c6175;
 }
@@ -87,7 +106,7 @@ body.dark .showcase_gradient {
 
     .home-container h1 {
     mix-blend-mode: soft-light;
-   }
+   } */
     
 </style>
 
