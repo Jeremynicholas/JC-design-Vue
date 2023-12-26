@@ -14,12 +14,13 @@
 
 <style>
     .grid__section {
-        position: relative;
+        position: absolute;
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
         overflow: hidden;
+
     }
 
     .grid__wrapper {
@@ -28,7 +29,6 @@
         height: 100%;
         top: 0;
         left: 0;
-        padding: 0 var(--columnPaddingNormal);
         pointer-events: none;
     }
     .grid_container {
@@ -36,17 +36,17 @@
         display: grid;
         grid: 1fr/repeat(4, 1fr);
         height: 100%;
-        max-width: var(--layoutWidth);
+        width: calc(var(--layoutWidth) + var(--columnPaddingNormal));
         margin: 0 auto;
     }
 
     .grid_lines {
         width: 1px;
-        background: blue;
+        background: rgb(243 243 243);
     }
 
     .grid_lines:first-of-type, .grid_lines:last-of-type {
-        background: red;
+        background: rgb(243 243 243);
     }
 
     .grid_lines:last-of-type {

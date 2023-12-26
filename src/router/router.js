@@ -56,15 +56,13 @@ const routes = [
 ]
 
 const router = createRouter({
-    routes,
     history: createWebHistory(),
+    routes
 })
 
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title || SITE_NAME;
     next();
-  });
-
-export default new createRouter ({
-    history: createWebHistory(), routes
 });
+
+export default router;

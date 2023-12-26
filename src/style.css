@@ -112,6 +112,9 @@ html {
   --btn-hover: var(--grey);
   }
   
+  body .theme .light {
+	  color: #000;
+  }
   body .theme .dark {
 	  display: none;
   }
@@ -252,6 +255,7 @@ padding-block: var(--sectionPaddingBlock);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--columnPaddingNormal);
+  align-items: start;
 }
 
 .grid_3_columns {
@@ -273,6 +277,9 @@ padding-block: var(--sectionPaddingBlock);
 }
 
 .columns {
+  display: grid;
+  align-items: start;
+  justify-items: start;
   row-gap: var(--gapLarge);
   padding-inline: var(--columnPaddingInline);
 }

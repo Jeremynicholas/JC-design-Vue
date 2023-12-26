@@ -29,6 +29,7 @@
         transition: var(--timingAll);
         text-align: center;
         box-shadow: var(--box-shadow-light);
+        overflow: hidden;
 
         a {
             text-decoration: none;

@@ -84,6 +84,10 @@ body.dark .showcase_gradient {
     .home-container {
         width: 600px;
     }
+
+    .home-container h1 {
+    mix-blend-mode: soft-light;
+   }
     
 </style>
 

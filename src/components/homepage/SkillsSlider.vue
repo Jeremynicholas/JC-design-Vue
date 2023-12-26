@@ -109,7 +109,8 @@ function reverseAnimation() {
 
     .skill-list li {
         font-size: var(--fontSizeButtons);
-        text-wrap: nowrap!important;
+        text-wrap: nowrap;
+        white-space: nowrap;
         padding: 1rem;
         background: var(--background-light-blue);
         border-radius: var(--border-radius);

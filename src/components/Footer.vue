@@ -1,16 +1,19 @@
 <template>
     <footer id="main-footer" class="grid_3_columns">
-				<a class="back-to-top" href="#top" title="Back to top">Back to top</a>
+				<!-- <a class="back-to-top" href="#top" title="Back to top">Back to top</a> -->
 			<div class="footer-grid footer-logo-container">
 				<logo />
-				<p class="footer-copy">Copyright &copy; JC Design {{ currentYear }}</p>
 			</div>	
+			<div class="footer-copy">
+				<p>Copyright &copy; JC Design {{ currentYear }}</p>
+			</div>
 			<div class="footer-grid footer-menu">
 				<ul>
                     <li><router-link :to="{path: 'about'}">About</router-link></li>
 					<li><router-link :to="{path: 'pricing'}">Pricing</router-link></li>
 					<li><router-link :to="{path: 'work'}">Work</router-link></li>
 					<li><router-link :to="{path: '/#enquire'}">Get in touch</router-link></li>
+					<li><router-link :to="{path: '/#top'}">Back to top</router-link></li>
 				</ul>
 			</div>
     </footer>
@@ -55,8 +58,18 @@
 }	
 
 .footer-copy {
+	grid-column: 1;
+	order: 3;
+	align-self: end;
+}
+
+.footer-copy p {
 	font-size: var(--fontSizeFooter);
 	color: var(--font-color);
+}
+
+.footer-menu {
+	grid-row: span 2;
 }
 
 .footer-menu ul li {

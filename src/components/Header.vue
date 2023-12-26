@@ -1,5 +1,5 @@
 <template>
-    <header id="header">
+    <header id="header top">
         <div class ="site_container">
 			<nav class="nav-header">
                     <Logo />
@@ -15,7 +15,7 @@
 								<li><router-link :to="{path: 'about'}">About</router-link></li>
 								<li><router-link :to="{name: 'pricing'}">Pricing</router-link></li>
 								<li><router-link :to="{name: 'work'}">Work</router-link></li>
-								<li><router-link :to="{path: '/#enquire'}">Get in touch</router-link></li>
+								<li><router-link :to="{ path: '/', hash: '#enquire' }">Get in touch</router-link></li>
 							<ul class ="social-icons-mobile show-at-mob-large">
 								<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
 									<i class="fab fa-linkedin-in"></i></a></li>
@@ -42,24 +42,6 @@ import { onMounted } from 'vue';
 
 
 onMounted(() => {
-  window.onresize = function () {
-    document.body.height = window.innerHeight;
-  };
-  window.onresize();
-
-  const Header = document.getElementById('header');
-  const burger = document.querySelector('.burger');
-  window.onscroll = function () {
-    const top = window.scrollY;
-    if (top >= 100) {
-		Header.classList.add('sticky');
-		burger.classList.add('sticky-burger');
-    } else {
-		Header.classList.remove('sticky');
-    }
-  };
-
-
   //Dark & Light Toggle
 	document.querySelector(".theme").addEventListener ('click', () => {
 		document.body.classList.toggle('dark');
@@ -72,27 +54,12 @@ onMounted(() => {
 	const navWrapper = document.querySelector('.menu-wrapper');
 	const nav = document.querySelector('.nav-links');
 	const navLinks = document.querySelectorAll('.nav-links li');
-	/*const body = document.querySelector('body');
-  
-	const disableScroll = () => {
-	  body.style.overflow = 'hidden';
-	};
-  
-	const enableScroll = () => {
-	  body.style.overflow = '';
-	};*/
   
 	burger.addEventListener('click', () => {
 		navWrapper.classList.toggle('active');
 		mobileMenu.classList.toggle('active');
 		nav.classList.toggle('active');
 	  	burger.classList.toggle('toggle');
-  
-	  /*if (nav.classList.contains('nav-active')) {
-		disableScroll();
-	  } else {
-		enableScroll();
-	  }*/
   
 	  navLinks.forEach((link, index) => {
 		if (link.style.animation) {
@@ -110,19 +77,16 @@ onMounted(() => {
 		navWrapper.classList.remove('active');
 		mobileMenu.classList.remove('active');
 		nav.classList.remove('active');
-		burger.classList.remove('toggle');
-		/*enableScroll();*/
-  
+		burger.classList.remove('toggle');  
 		navLinks.forEach(link => {
 		  link.style.animation = '';
 		});
 	  });
 	});
-  };
-  
-  navSlide();
+  }; navSlide();
 
 });
+
 </script>
 
 
@@ -228,6 +192,7 @@ header.sticky {
 
 	.nav-links {
 		position: relative;
+		overflow: hidden;
 		transition: var(--timingAll);
 		flex-direction: column;
 		align-items: flex-start;

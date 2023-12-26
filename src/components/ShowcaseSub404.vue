@@ -42,13 +42,13 @@ onMounted(() => {
 
 <style scoped>
 body.dark .showcase_gradient {
-   --gradientColorOne: #4a6028;
-   --gradientColorTwo: #2c6175;
+   --gradientColorOne: #482964;
+   --gradientColorTwo: #414f93;
 }
 
 .showcase_gradient {
-       --gradientColorOne: #8bb44e;
-       --gradientColorTwo: #90e0ff;
+       --gradientColorOne: #844eb4;
+       --gradientColorTwo: #6c80e6;
        
        position: relative;
        top: 0;
@@ -89,6 +89,10 @@ body.dark .showcase_gradient {
         align-items: flex-start;
         gap: var(--gap);
         width: 600px;
+   }
+
+   .home-container h1 {
+    mix-blend-mode: soft-light;
    }
    
 </style>
