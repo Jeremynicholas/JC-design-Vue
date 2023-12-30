@@ -5,7 +5,8 @@
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/#enquire">
+              action="/#enquire"
+              @submit.prevent="handleSubmit">
           
           <div class="form-field">
             <label>Name</label>
@@ -35,43 +36,37 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import axios from 'axios';
+  import { ref } from 'vue';
 
   const form = ref({
-  name: '',
-  email: '',
-  message: '',
-  budget: '',
-});
+    name: '',
+    email: '',
+    message: '',
+    budget: '',
+  });
 
   const successMessage = ref('');
   const errorMessage = ref('');
 
-  onMounted(() => {
-  const contactForm = document.querySelector('.contact-form');
+  const handleSubmit = () => {
+    const myForm = document.querySelector('.contact-form');
+    const formData = new FormData(myForm);
 
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    try {
-      const formData = new FormData(contactForm);
-      const response = await axios.post(contactForm.getAttribute('action'), formData);
-
-      if (response.status === 200) {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
         successMessage.value = 'Thank you for your submission';
         errorMessage.value = '';
-      } else {
+      })
+      .catch((error) => {
+        console.error('Error submitting form:', error);
         successMessage.value = '';
         errorMessage.value = 'Error submitting form. Please try again.';
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      successMessage.value = '';
-      errorMessage.value = 'Error submitting form. Please try again.';
-    }
-  });
-});
+      });
+  };
 
 </script>
 

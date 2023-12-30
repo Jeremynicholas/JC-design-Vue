@@ -74,7 +74,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
     scrollBehavior(to, from, savedPosition) {    
-        return { x: 0, y: 0 };
+        return { top: 0 };
     }
     
 })
