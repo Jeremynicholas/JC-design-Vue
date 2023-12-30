@@ -1,12 +1,13 @@
 <template>
     <div class="form-style">
         <form class ="contact-form"
-              name="contact-form"
+              name="contact"
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               @submit.prevent="handleSubmit">
-          
+           <input type="hidden" name="form-name" value="contact" />
+  
           <div class="form-field">
             <label>Name</label>
             <input v-model="form.name" type="text" name="name" placeholder="Name" required>
@@ -35,37 +36,48 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-  const form = ref({
-    name: '',
-    email: '',
-    message: '',
-    budget: '',
-  });
+const form = ref({
+  name: '',
+  email: '',
+  message: '',
+  budget: '',
+});
 
-  const successMessage = ref('');
-  const errorMessage = ref('');
+const successMessage = ref('');
+const errorMessage = ref('');
 
-  const handleSubmit = () => {
-    const myForm = document.querySelector('.contact-form');
-    const formData = new FormData(myForm);
+onMounted(() => {
+  const contactForm = document.querySelector('.contact-form');
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (response.ok) {
         successMessage.value = 'Thank you for your submission';
         errorMessage.value = '';
-      })
-      .catch((error) => {
-        console.error('Error submitting form:', error);
+      } else {
         successMessage.value = '';
         errorMessage.value = 'Error submitting form. Please try again.';
-      });
-  };
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      successMessage.value = '';
+      errorMessage.value = 'Error submitting form. Please try again.';
+    }
+  });
+});
 
 </script>
 
