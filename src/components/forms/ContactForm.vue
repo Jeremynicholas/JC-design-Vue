@@ -5,7 +5,7 @@
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/#enquire"
+              action="#"
               @submit.prevent="handleSubmit">
           
           <div class="form-field">
@@ -30,8 +30,8 @@
             <button class="submit_btn" type="submit" name="submit">Enquire Now</button>
             </div>
         </form>	
-        <div v-if="successMessage">{{ successMessage }}</div>
-        <div v-if="errorMessage">{{ errorMessage }}</div>
+        <div v-if="successMessage" class="success-message">{{ successMessage }}</div>
+        <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
       </div>
 </template>
 
@@ -135,6 +135,12 @@
 
     .submit_btn:hover {
         background: var(--btn-hover);  
+    }
+
+    .success-message {
+      background: green;
+      padding: 5px 15px;
+      border-radius: var(--border-radius);
     }
 
 </style>
