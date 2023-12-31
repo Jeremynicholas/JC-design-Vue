@@ -8,7 +8,7 @@
                             <div class="columns">
                                 <h1>{{ pageTitle }}</h1>
                                 <p v-html="$route.meta.description" class="description"></p>
-                                <Button icon="fas fa-fw fa-envelope" text="Get in touch" url="/#enquire" />
+                                <Button text="Learn more" url="#to_next" />
                             </div>
                     
                             <div class="columns">			

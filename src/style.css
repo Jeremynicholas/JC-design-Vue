@@ -18,6 +18,7 @@ html {
 
     --background: #f6f9fc;
     --background-dark: var(--dark); 
+    --background-light: #f6f9fc; 
     --background-light-blue: rgb(229, 242, 255); 
     --background-light-hover: #dde9f9; 
 
@@ -42,6 +43,7 @@ html {
     --layoutWidthMax: 1080px ;
     --layoutWidth: var(--layoutWidthMax);
     --sectionPaddingBlock: 60px;
+    --gapSmall: 10px;
     --gap: 15px;
     --gapLarge: 30px;
 
@@ -101,8 +103,9 @@ html {
     color: var(--greyDark);
     --accentBlue: rgb(64, 153, 178);
   --background: var(--dark);
+  --background-light: rgb(55, 64, 70);;
   --background-dark: rgb(202, 202, 202);
-  --background-light-blue: rgb(43, 47, 50); 
+  --background-light-blue: rgb(41, 52, 61); 
   --heading-color: rgb(202, 202, 202);
   --font-color: rgb(202, 202, 202);
   --font-reverse: #000;

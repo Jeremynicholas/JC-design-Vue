@@ -30,9 +30,9 @@ const routes = [
         name: 'pricing',
         component: () => import('../views/Pricing.vue'),
         meta: {
-            title: `${SITE_NAME} | Pricing Page`,
-            pageTitle: 'Pricing', 
-            description: 'This is the description for the Pricing page.',
+            title: `${SITE_NAME} | Pricing | How much does it cost to build a website`,
+            pageTitle: 'Pricing, how it works', 
+            description: `<p>You will be guided through the build every step of the way and will have open communication throughout the whole process to make it as seamless as possible. The creation of your website will be designed from considerable experience in the industry, but ultimately built to your specifications.</p>`,
             imgSrc: '/public/images/graphic-design-logo.png',
 
         },

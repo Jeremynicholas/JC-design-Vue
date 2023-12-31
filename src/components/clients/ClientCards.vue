@@ -24,6 +24,7 @@
     .site {
         display: flex;
         flex-direction: column;
+        background: var(--background-light);
         border-radius: 5px;
         border: 2px solid var(--accent-blue);
         transition: var(--timingAll);
@@ -38,8 +39,8 @@
         & .background {
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center center;;
-            height: 130px;
+            background-position: top center;;
+            height: 230px;
         }
 
         & .name {
