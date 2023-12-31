@@ -2,14 +2,14 @@
     <div class="form-style">
 
         <form class ="contact-form"
-              name="contact"
+              name="contact-form"
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               netlify
               @submit.prevent="handleSubmit">  
 
-          <input type="hidden" name="contact" value="contact_form" />
+          <input type="hidden" name="contact-form" value="contact_form" />
 
           <div class="form-field">
             <label>Name</label>
@@ -54,22 +54,20 @@ const errorMessage = ref('');
 
   const handleSubmit = async () => {
   try {
-    const response = await fetch('', {
+    const response = await fetch('/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        'form-name': 'contact',
+        'form-name': 'contact-form',
         ...toRefs(form)
       }).toString(),
     });
 
       if (response.ok) {
         successMessage.value = 'Thank you for your submission';
-        errorMessage.value = '';
       } else {
-        successMessage.value = '';
         errorMessage.value = 'Error submitting form. Please try again.';
       }
     } catch (error) {

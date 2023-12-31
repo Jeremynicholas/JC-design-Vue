@@ -87,7 +87,6 @@
 			
           <div class="columns">			
             <ContactForm />
-            <ContactFormTest />
         </div>		
 		  </div>
     </Section>
