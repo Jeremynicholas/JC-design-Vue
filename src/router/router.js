@@ -48,17 +48,6 @@ const routes = [
         },
     },
     {
-        path: '/:pathMatch(.*)*',
-        name: '404',
-        component: () => import('../views/404.vue'),
-        meta: {
-            title: `${SITE_NAME} | 404 Page`,
-            pageTitle: 'Oops wrong page', 
-            description: "Looks like you've followed a broken link or entered a URL that doesn't exist on this site.",
-        },        
-    },
-
-    {
         path: '/thanks',
         name: 'success',
         component: () => import('../components/forms/SubmissionSuccess.vue'),
@@ -67,6 +56,16 @@ const routes = [
         path: '/fail',
         name: 'fail',
         component: () => import('../components/forms/SubmissionFail.vue'),
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: '404',
+        component: () => import('../views/404.vue'),
+        meta: {
+            title: `${SITE_NAME} | 404 Page`,
+            pageTitle: 'Oops wrong page', 
+            description: "Looks like you've followed a broken link or entered a URL that doesn't exist on this site.",
+        },        
     },
 ]
 
