@@ -8,7 +8,7 @@
       </form>
 
         <form class ="contact-form"
-              name="Contact"
+              name="contact"
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
