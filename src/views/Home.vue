@@ -114,7 +114,9 @@
   }
 
   .card_grid .cards li {
-    list-style: none;
+    list-style: '›';
+    text-align: left;
+    padding-left: 10px;
   }
 
 </style>

@@ -5,7 +5,6 @@
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/"
               @submit.prevent="handleSubmit">
            <input type="hidden" name="form-name" value="contact" />
   
@@ -50,7 +49,7 @@ const successMessage = ref('');
 const errorMessage = ref('');
 
 onMounted(() => {
-  const contactForm = document.forms.contact;
+  const contactForm = document.querySelector('.contact-form');
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -107,7 +106,7 @@ onMounted(() => {
 	border-color: var(--font-color-placeholder);
 	color: var(--font-color);
 	font: var(--bodyFont);
-	padding: 10px 0px 10px 0px;
+	padding: 10px 0px 0px 0px;
 	width: 100%;
 }	
 

@@ -42,11 +42,13 @@
 
     .grid_lines {
         width: 1px;
-        background: rgb(243 243 243);
+        background: linear-gradient(180deg,var(--grid-lines),var(--grid-lines) 50%,transparent 0,transparent);
+        background-size: 1px 8px
+
     }
 
     .grid_lines:first-of-type, .grid_lines:last-of-type {
-        background: rgb(243 243 243);
+        background: var(--grid-lines);
     }
 
     .grid_lines:last-of-type {
@@ -59,6 +61,7 @@
     @media (max-width: 1024px) {
         .grid_container {
             grid: 1fr/repeat(2, 1fr);
+            width: calc(100vw - var(--columnPaddingNormal));
         }
     }
 </style>

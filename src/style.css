@@ -32,6 +32,7 @@ html {
     --font-color-hover: var(--white);
     --font-color-placeholder: rgb(115, 115, 115);
 
+    --grid-lines: rgb(243 243 243);
     --border-color: rgb(208, 208, 208);
     --border-radius: 5px;
     --border-radius-buttons: 50px;
@@ -57,6 +58,7 @@ html {
 
     --fontSizeBody: 1.1rem;
     --fontSizeButtons: 0.9rem;
+    --fontSizeSmall: 0.9rem;
     --fontSizeTiny: 0.7rem;
     --bodyFont: var(--font300) var(--fontSizeBody) / 1.8rem var(--font-family);
     --fontSizeFooter: 0.9rem;
@@ -97,7 +99,7 @@ html {
   
   body.dark {
     color: var(--greyDark);
-    --accentBlue: rgb(72, 130, 188);
+    --accentBlue: rgb(64, 153, 178);
   --background: var(--dark);
   --background-dark: rgb(202, 202, 202);
   --background-light-blue: rgb(43, 47, 50); 
@@ -106,6 +108,8 @@ html {
   --font-reverse: #000;
   --font-color-hover: #000;
   --font-color-placeholder: rgb(170, 170, 170); 
+
+  --grid-lines: #000000;
   --border-color: #000000;
   --btn: var(--grey);
   --btnTransparent: rgb(170, 170, 170);

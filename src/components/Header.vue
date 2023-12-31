@@ -11,7 +11,7 @@
 					<div class="menu-wrapper">
 						<div class="main-menu">
 							<ul class = "nav-links">
-								<Logo class="show-at-mob" />
+								<Logo id="mobileLogo" class="show-at-mob" />
 								<li><router-link :to="{path: 'about'}">About</router-link></li>
 								<li><router-link :to="{name: 'pricing'}">Pricing</router-link></li>
 								<li><router-link :to="{name: 'work'}">Work</router-link></li>
@@ -54,6 +54,7 @@ onMounted(() => {
 	const navWrapper = document.querySelector('.menu-wrapper');
 	const nav = document.querySelector('.nav-links');
 	const navLinks = document.querySelectorAll('.nav-links li');
+	const mobileLogo = document.getElementById('mobileLogo');
   
 	burger.addEventListener('click', () => {
 		navWrapper.classList.toggle('active');
@@ -71,6 +72,13 @@ onMounted(() => {
 		}
 	  });
 	});
+
+	mobileLogo.addEventListener('click', () => {
+      navWrapper.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      nav.classList.remove('active');
+      burger.classList.remove('toggle');
+    });
   
 	navLinks.forEach(link => {
 	  link.addEventListener('click', () => {
