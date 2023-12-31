@@ -37,12 +37,13 @@
 <script setup>
 import { ref, reactive, toRefs, onMounted } from 'vue';
 
-const state = reactive({
+const form = reactive({
   name: '',
   email: '',
   message: '',
   budget: '',
 });
+
 
 const successMessage = ref('');
 const errorMessage = ref('');
@@ -56,7 +57,7 @@ const errorMessage = ref('');
       },
       body: new URLSearchParams({
         'form-name': 'contact',
-        ...toRefs(state)
+        ...toRefs(form)
       }).toString(),
     });
 
