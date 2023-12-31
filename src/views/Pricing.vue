@@ -31,7 +31,7 @@
   import ShowcaseSub from '../components/ShowcaseSub.vue'
   import PricingCards from '../components/PricingCards.vue'
   import Button from '../components/Button.vue'
-  import ContactForm from '../components/forms/contactform.vue'
+  import ContactForm from '../components/forms/ContactForm.vue'
   import Tick from '../components/Tick.vue'
   import Cross from '../components/Cross.vue'
   
