@@ -6,7 +6,6 @@
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              netlify
               @submit.prevent="handleSubmit">  
 
           <div class="form-field">
@@ -37,20 +36,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, toRefs } from 'vue';
-
-const form = reactive({
-  name: '',
-  email: '',
-  message: '',
-  budget: '',
-});
-
-
-const successMessage = ref('');
-const errorMessage = ref('');
-
-  const handleSubmit = async () => {
+const handleSubmit = async () => {
   try {
     const response = await fetch('/', {
       method: 'POST',
@@ -59,21 +45,24 @@ const errorMessage = ref('');
       },
       body: new URLSearchParams({
         'form-name': 'contact-form',
-        ...toRefs(form)
+        'name': form.name,
+        'email': form.email,
+        'message': form.message,
+        'budget': form.budget,
       }).toString(),
     });
 
-      if (response.ok) {
-        successMessage.value = 'Thank you for your submission';
-      } else {
-        errorMessage.value = 'Error submitting form. Please try again.';
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      successMessage.value = '';
+    if (response.ok) {
+      successMessage.value = 'Thank you for your submission';
+    } else {
       errorMessage.value = 'Error submitting form. Please try again.';
     }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    successMessage.value = '';
+    errorMessage.value = 'Error submitting form. Please try again.';
   }
+};
 </script>
 
 
