@@ -6,6 +6,7 @@
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              netlify
               @submit.prevent="handleSubmit">  
 
           <input type="hidden" name="contact" value="contact_form" />
