@@ -7,6 +7,9 @@
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               @submit.prevent="handleSubmit">  
+
+          <input type="hidden" name="contact" value="contact_form" />
+
           <div class="form-field">
             <label>Name</label>
             <input v-model="form.name" type="text" name="name" placeholder="Name" required>
