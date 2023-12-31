@@ -64,7 +64,6 @@ body.dark .showcase_gradient {
         background-size: 400% 400%;
         background-attachment: fixed;
         animation: gradient 50s ease infinite;
-
     }
 
     @keyframes gradient {
@@ -82,6 +81,10 @@ body.dark .showcase_gradient {
     @media (max-width: 767px) {
         .showcase_gradient {
             height: 270px;
+        }
+
+        .showcase_gradient::after {
+            background-size: 200% 200%;
         }
 
     }
