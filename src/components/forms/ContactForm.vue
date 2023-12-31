@@ -7,7 +7,6 @@
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               netlify
-              action="/"
               @submit.prevent="handleSubmit">  
 
           <input type="hidden" name="contact" value="contact_form" />
@@ -55,10 +54,7 @@ const errorMessage = ref('');
 
   const handleSubmit = async () => {
   try {
-    const formElement = document.querySelector('form[name="contact"]');
-    const actionUrl = formElement.getAttribute('action');
-
-    const response = await fetch(actionUrl, {
+    const response = await fetch('', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
