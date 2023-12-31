@@ -2,7 +2,6 @@
     <SectionMain>
       <Showcase />
     </SectionMain>
-
     
     <Section>
         <AnchorLine :AnchorText="'About'" />
