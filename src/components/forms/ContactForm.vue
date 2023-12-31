@@ -1,23 +1,12 @@
 <template>
     <div class="form-style">
 
-        <!-- A little help for the Netlify bots if you're not using a SSG -->
-        <form name="contact"
-              data-netlify="true"
-              netlify netlify-honeypot="bot-field"
-              style="display: none;">
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <textarea name="message"></textarea>
-        </form>
-
         <form class ="contact-form"
               name="contact"
               method="post" 
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
               @submit.prevent="handleSubmit">  
-
-          <input type="hidden" name="form-name" value="contact" />
-          
           <div class="form-field">
             <label>Name</label>
             <input v-model="form.name" type="text" name="name" placeholder="Name" required>
@@ -46,9 +35,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, reactive, toRefs, onMounted } from 'vue';
 
-const form = ref({
+const state = reactive({
   name: '',
   email: '',
   message: '',
@@ -58,21 +47,18 @@ const form = ref({
 const successMessage = ref('');
 const errorMessage = ref('');
 
-onMounted(() => {
-  const contactForm = document.querySelector('.contact-form');
-
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    try {
-      const formData = new FormData(contactForm);
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(formData).toString(),
-      });
+  const handleSubmit = async () => {
+  try {
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        'form-name': 'contact',
+        ...toRefs(state)
+      }).toString(),
+    });
 
       if (response.ok) {
         successMessage.value = 'Thank you for your submission';
@@ -86,9 +72,7 @@ onMounted(() => {
       successMessage.value = '';
       errorMessage.value = 'Error submitting form. Please try again.';
     }
-  });
-});
-
+  }
 </script>
 
 
