@@ -70,6 +70,7 @@
 			
           <div class="columns">			
             <ContactForm />
+            <ContactFormTest />
         </div>		
 		  </div>
     </Section>
@@ -83,6 +84,7 @@
     import SkillsSlider from '../components/homepage/SkillsSlider.vue'
     import AnchorLine from '../components/AnchorLine.vue'
     import ContactForm from '../components/forms/ContactForm.vue'
+    import ContactFormTest from '../components/forms/ContactFormTest.vue'
 </script>
 
 <style>
