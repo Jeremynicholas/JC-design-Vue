@@ -9,8 +9,6 @@
               netlify
               @submit.prevent="handleSubmit">  
 
-          <input type="hidden" name="contact-form" value="contact_form" />
-
           <div class="form-field">
             <label>Name</label>
             <input v-model="form.name" type="text" name="name" placeholder="Name" required>
