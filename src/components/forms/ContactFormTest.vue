@@ -1,18 +1,52 @@
 <template>
-<form name="contact" data-netlify="true" netlify method="POST" action="/thanks">
-  <p>
-    <label>Name <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Email <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+    <div class="form-style">
+      <!-- A little help for the Netlify bots if you're not using a SSG -->
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+      </form>
+  
+      <form name="contact" method="post" @submit.prevent="handleSubmit">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-field">
+          <label>Your Name:</label>
+          <input v-model="name" type="text" name="name" required />
+        </div>
+        <div class="form-field">
+          <label>Your Email:</label>
+          <input v-model="email" type="email" name="email" required />
+        </div>
+        <div class="form-field">
+          <label>Message:</label>
+          <textarea v-model="message" name="message" rows="3" required></textarea>
+        </div>
+        <div class="form-field">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+  
+      <div v-if="successMessage" class="success-message">{{ successMessage }}</div>
+      <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </div>
   </template>
   
   <script setup>
-
+  import { ref } from 'vue';
+  
+  const name = ref('');
+  const email = ref('');
+  const message = ref('');
+  const successMessage = ref('');
+  const errorMessage = ref('');
+  
+  const handleSubmit = () => {
+    console.log('Form submitted:', { name: name.value, email: email.value, message: message.value });
+    // Add your form submission logic here
+  
+    // For demonstration purposes, set a success message
+    successMessage.value = 'Thank you for your submission';
+    errorMessage.value = '';
+  };
   </script>
   
