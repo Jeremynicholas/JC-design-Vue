@@ -140,7 +140,6 @@ html {
 	}
 
 a {
-  font-size: var(--fontSizeSmall);
   font-weight: var(--font600);
   font-family: var(--font-family);
   color: var(--accentBlue);

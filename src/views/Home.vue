@@ -3,9 +3,26 @@
       <Showcase />
     </SectionMain>
 
-    <SectionsNoPadding>
+    
+    <Section>
+        <AnchorLine :AnchorText="'About'" />
+            <div class="grid_2_columns">
+                 <div class="columns reverse">
+                        <h2>About {{SITE_NAME}}</h2>
+                        <p><span>{{SITE_NAME}} is a online web services</span> company dedicated to providing quality & innovative digital design.</p>
+                        <p>Our products are designed to optimise your business and improve your efficiency. JC Design separates itself by partnering with you to achieve your objectives with a <span>personal and flexible approach.</span></p>
+                        <SkillsSlider />
+                    </div>
+                    
+                    <div class="columns">			
+                         <img src="../../images/about-us.png" alt="about"/>
+                    </div>
+            </div>	
+    </Section>
+
+    <!-- <SectionsNoPadding>
       <SkillsSlider />
-    </SectionsNoPadding>
+    </SectionsNoPadding> -->
 
     <Section id="services" class="has_background">
         <AnchorLine :AnchorText="'Services'" />
@@ -77,10 +94,10 @@
 </template>
 
 <script setup >
+    import { SITE_NAME } from '../constants.js'
     import Showcase from '../components/homepage/Showcase.vue'
     import SectionMain from '../components/homepage/SectionMain.vue'
     import Section from '../components/Sections.vue'
-    import SectionsNoPadding from '../components/SectionsNoPadding.vue'
     import SkillsSlider from '../components/homepage/SkillsSlider.vue'
     import AnchorLine from '../components/AnchorLine.vue'
     import ContactForm from '../components/forms/ContactForm.vue'
@@ -93,6 +110,19 @@
     background: var(--background-light-blue);
     text-align: center;
   }
+
+  .grid_2_columns {
+    align-items: center;
+
+    & .columns img {
+      max-width: 100%;
+    }
+
+    & .columns span {
+      color: var(--accentBlue);
+      font-weight: var(--font400);
+    }
+}
 
   .card_grid {
     grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));

@@ -147,6 +147,7 @@ header.sticky {
 }
 
 .nav-links a {	
+	font-size: var(--fontSizeSmall);
 	color: var(--font-color);
 	text-decoration: none;
 }

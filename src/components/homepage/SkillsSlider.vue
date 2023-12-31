@@ -74,7 +74,7 @@ function reverseAnimation() {
 
 <style scoped>
     .scroller {
-        max-width: 600px;
+        max-width: 500px;
     }
 
     .scroller_inner {
