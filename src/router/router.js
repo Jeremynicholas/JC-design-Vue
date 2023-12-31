@@ -22,7 +22,7 @@ const routes = [
             pageTitle: 'About me', 
             description: `<p>JC Design is a <span>online web services company</span> dedicated to providing quality & innovative digital design.</p>
             <p>Our products are designed to optimise your business and improve your efficiency. JC Design separates itself by partnering with you to achieve your objectives with a<span>personal and flexible approach</span>.</p>`,
-            imgSrc: '/public/images/web-design-logo.png',
+            imgSrc: '/images/web-design-logo.png',
         },
     },
     {
@@ -33,7 +33,7 @@ const routes = [
             title: `${SITE_NAME} | Pricing | How much does it cost to build a website`,
             pageTitle: 'Pricing, how it works', 
             description: `<p>You will be guided through the build every step of the way and will have open communication throughout the whole process to make it as seamless as possible. The creation of your website will be designed from considerable experience in the industry, but ultimately built to your specifications.</p>`,
-            imgSrc: '/public/images/graphic-design-logo.png',
+            imgSrc: '/images/graphic-design-logo.png',
 
         },
     },

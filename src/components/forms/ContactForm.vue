@@ -1,13 +1,18 @@
 <template>
     <div class="form-style">
+    <!-- A little help for the Netlify bots if you're not using a SSG -->
+      <form name="contact" netlify netlify-honeypot="bot-field" style="display: none;">
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+      </form>
+
         <form class ="contact-form"
-              name="contact"
+              name="Contact"
               method="post" 
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              @submit.prevent="handleSubmit">
-           <input type="hidden" name="form-name" value="contact" />
-  
+              @submit.prevent="handleSubmit">  
           <div class="form-field">
             <label>Name</label>
             <input v-model="form.name" type="text" name="name" placeholder="Name" required>
