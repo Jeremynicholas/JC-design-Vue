@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, toRefs, onMounted } from 'vue';
+import { ref, reactive, toRefs } from 'vue';
 
 const form = reactive({
   name: '',
@@ -55,7 +55,10 @@ const errorMessage = ref('');
 
   const handleSubmit = async () => {
   try {
-    const response = await fetch('/', {
+    const formElement = document.querySelector('form[name="contact"]');
+    const actionUrl = formElement.getAttribute('action');
+
+    const response = await fetch(actionUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

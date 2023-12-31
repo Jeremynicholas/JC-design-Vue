@@ -31,22 +31,45 @@
     </div>
   </template>
   
-  <script setup>
-  import { ref } from 'vue';
-  
-  const name = ref('');
-  const email = ref('');
-  const message = ref('');
-  const successMessage = ref('');
-  const errorMessage = ref('');
-  
-  const handleSubmit = () => {
-    console.log('Form submitted:', { name: name.value, email: email.value, message: message.value });
-    // Add your form submission logic here
-  
-    // For demonstration purposes, set a success message
-    successMessage.value = 'Thank you for your submission';
-    errorMessage.value = '';
-  };
-  </script>
+<script setup>
+import { ref, reactive, toRefs, onMounted } from 'vue';
+
+const form = reactive({
+  name: '',
+  email: '',
+  message: '',
+  budget: '',
+});
+
+
+const successMessage = ref('');
+const errorMessage = ref('');
+
+  const handleSubmit = async () => {
+  try {
+    const response = await fetch('/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        'form-name': 'contact',
+        ...toRefs(form)
+      }).toString(),
+    });
+
+      if (response.ok) {
+        successMessage.value = 'Thank you for your submission';
+        errorMessage.value = '';
+      } else {
+        successMessage.value = '';
+        errorMessage.value = 'Error submitting form. Please try again.';
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      successMessage.value = '';
+      errorMessage.value = 'Error submitting form. Please try again.';
+    }
+  }
+</script>
   
