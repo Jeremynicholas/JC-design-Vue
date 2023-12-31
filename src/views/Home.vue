@@ -15,7 +15,7 @@
                     </div>
                     
                     <div class="columns">			
-                         <img src="../../images/about-us.png" alt="about"/>
+                         <img src="/images/about-us.png" alt="about"/>
                     </div>
             </div>	
     </Section>
