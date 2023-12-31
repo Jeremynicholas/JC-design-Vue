@@ -36,6 +36,18 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const form = ref({
+  name: '',
+  email: '',
+  message: '',
+  budget: '',
+});
+
+const successMessage = ref('');
+const errorMessage = ref('');
+
 const handleSubmit = async () => {
   try {
     const response = await fetch('/', {
@@ -45,16 +57,15 @@ const handleSubmit = async () => {
       },
       body: new URLSearchParams({
         'form-name': 'contact-form',
-        'name': form.name,
-        'email': form.email,
-        'message': form.message,
-        'budget': form.budget,
+        ...form.value,
       }).toString(),
     });
 
     if (response.ok) {
       successMessage.value = 'Thank you for your submission';
+      errorMessage.value = '';
     } else {
+      successMessage.value = '';
       errorMessage.value = 'Error submitting form. Please try again.';
     }
   } catch (error) {
