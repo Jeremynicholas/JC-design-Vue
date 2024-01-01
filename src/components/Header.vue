@@ -12,10 +12,10 @@
 						<div class="main-menu">
 							<ul class = "nav-links">
 								<Logo id="mobileLogo" class="show-at-mob" />
-								<li><router-link :to="{ path: 'about' }">About</router-link></li>
-								<li><router-link :to="{ path: 'pricing' }">Pricing</router-link></li>
-								<li><router-link :to="{ path: 'work' }">Work</router-link></li>
-								<li><RouterLink  :to="{ path: '/' }"  class="scroll-to-enquire">Get in touch</RouterLink></li>
+								<li><RouterLink :to="{ path: 'about' }">About</RouterLink></li>
+								<li><RouterLink :to="{ path: 'pricing' }">Pricing</RouterLink></li>
+								<li><RouterLink :to="{ path: 'work' }">Work</RouterLink></li>
+								<li><RouterLink :to="{ path: '/' }"  class="scroll-to-enquire">Get in touch</RouterLink></li>
 							<ul class ="social-icons-mobile show-at-mob-large">
 								<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
 									<i class="fab fa-linkedin-in"></i></a></li>

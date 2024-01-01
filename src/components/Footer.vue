@@ -9,36 +9,36 @@
 			</div>
 			<div class="footer-grid footer-menu">
 				<ul>
-                    <li><router-link :to="{path: 'about'}">About</router-link></li>
-					<li><router-link :to="{path: 'pricing'}">Pricing</router-link></li>
-					<li><router-link :to="{path: 'work'}">Work</router-link></li>
-					<li><RouterLink  :to="{ path: '/' }"  class="scroll-to-enquire">Get in touch
-					</RouterLink></li>
-					<li><router-link :to="{path: '/#top'}">Back to top</router-link></li>
+                    <li><RouterLink :to="{ path: 'about' }">About</RouterLink></li>
+					<li><RouterLink :to="{ path: 'pricing' }">Pricing</RouterLink></li>
+					<li><RouterLink :to="{ path: 'work' }">Work</RouterLink></li>
+					<li><RouterLink :to="{ path: '/' }"  class="scroll-to-enquire-footer">Get in touch</RouterLink></li>
+					<li><RouterLink :to="{ path: '/#top' }">Back to top</RouterLink></li>
 				</ul>
 			</div>
     </footer>
 </template>
 
 <script setup >
-import { ref, onMounted } from 'vue';
 import Logo from './Logo.vue';
+import { RouterLink } from 'vue-router';
+import { onMounted, ref } from 'vue';
 import { scrollToEnquire } from '../constants';
 
 const currentYear = ref('');
 const link = ref(null);
 
 onMounted(() => {
-//Get Current Year
-    currentYear.value = new Date().getFullYear().toString(); 
-
 //Anchor Scroll
-	link.value = document.querySelector('.scroll-to-enquire');
+	link.value = document.querySelector('.scroll-to-enquire-footer');
 		if (link.value) {
 		link.value.addEventListener('click', () => {
 			scrollToEnquire();
 		});
 	}
+
+	//Get Current Year
+    currentYear.value = new Date().getFullYear().toString(); 
 
 });
 </script>
