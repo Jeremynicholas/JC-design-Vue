@@ -8,8 +8,8 @@
             <div class="grid_2_columns">
                  <div class="columns reverse">
                         <h2>About {{SITE_NAME}}</h2>
-                        <p><span>{{SITE_NAME}} is a online web services</span> company dedicated to providing quality & innovative digital design.</p>
-                        <p>Our products are designed to optimise your business and improve your efficiency. JC Design separates itself by partnering with you to achieve your objectives with a <span>personal and flexible approach.</span></p>
+                        <p><span>{{SITE_NAME}} is an online web services company</span> dedicated to providing quality & innovative digital design.</p>
+                        <p>Our products are designed to optimise your business and improve your efficiency. {{SITE_NAME}} separates itself by partnering with you to achieve your objectives with a <span>personal and flexible approach.</span></p>
                         <SkillsSlider />
                     </div>
                     
@@ -99,7 +99,6 @@
     import SkillsSlider from '../components/homepage/SkillsSlider.vue'
     import AnchorLine from '../components/AnchorLine.vue'
     import ContactForm from '../components/forms/ContactForm.vue'
-    import ContactFormTest from '../components/forms/ContactFormTest.vue'
 </script>
 
 <style>
@@ -114,11 +113,6 @@
 
     & .columns img {
       max-width: 100%;
-    }
-
-    & .columns span {
-      color: var(--accentBlue);
-      font-weight: var(--font400);
     }
 }
 

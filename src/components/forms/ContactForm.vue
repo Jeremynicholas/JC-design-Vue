@@ -9,23 +9,30 @@
               @submit.prevent="handleSubmit">  
 
           <div class="form-field">
+            <label>Clinic or business Name</label>
+            <input v-model="form.name" type="text" name="business-name" placeholder="Clinic or business name">
+          </div>
+
+          <div class="form-field">
             <label>Name</label>
             <input v-model="form.name" type="text" name="name" placeholder="Name" required>
-            </div>
+          </div>
+
           <div class="form-field">
             <label>Email</label>
             <input v-model="form.email" type="email" name="email" placeholder="Email Address" required>
-            </div>
+          </div>
+
+          <div class="form-field">		
+            <label>Existing Website</label>	
+            <input v-model="form.budget" type="text" name="existing-website" placeholder="Do you have an existing website? If so please enter the address.">
+          </div>
 
           <div class="form-field">
             <label>Message</label>
-            <textarea v-model="form.message" name="message" rows="3" placeholder="message (optional)"></textarea>
-            </div>
-          
-          <div class="form-field">		
-            <label>Budget</label>	
-            <textarea v-model="form.budget" name="budget" rows="0" placeholder="budget (optional)"></textarea>
-            </div>
+            <textarea v-model="form.message" name="message" placeholder="What are you enquiring about?"></textarea>
+          </div>
+
           <div>	
             <button class="submit_btn" type="submit" name="submit">Enquire Now</button>
             </div>

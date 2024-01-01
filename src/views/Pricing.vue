@@ -16,6 +16,7 @@
         <div v-if="showContactForm" class="contact-form-container">
           <div class="contact-form-popup">
             <i class="fas fa-times" @click="closeContactForm"></i>
+            <h3>Get in touch</h3>
             <ContactForm />
           </div>
         </div>
@@ -32,8 +33,8 @@
   import PricingCards from '../components/PricingCards.vue'
   import Button from '../components/Button.vue'
   import ContactForm from '../components/forms/ContactForm.vue'
-  import Tick from '../components/Tick.vue'
-  import Cross from '../components/Cross.vue'
+  import Tick from '../components/icons/Tick.vue'
+  import Cross from '../components/icons/Cross.vue'
   
 
     const pricing = ref ([
@@ -105,10 +106,13 @@
 
   const openContactForm = () => {
     showContactForm.value = true;
+    document.body.style.overflow = 'hidden';
   };
 
   const closeContactForm = () => {
     showContactForm.value = false;
+    document.body.style.overflow = '';
+
   };
 
 </script>
@@ -116,7 +120,7 @@
 <style scoped>
 .contact-form-container {
   position: fixed;
-  top: 0;
+  top: auto;
   left: 0;
   bottom: 0;
   height: 100vh;
@@ -128,6 +132,7 @@
 }
 .contact-form-popup {
   position: relative;
+  z-index: 99;
   background: var(--background);
   padding: var(--columnPaddingNormal);
   border-radius: var(--border-radius);
@@ -150,6 +155,14 @@
 	list-style: none;	
 	text-align: center;
 	gap: var(--gapLarge);
+}
+
+
+@media (max-width: 1024px){
+  .contact-form-container {
+    top: 100%;
+    height: 100%;
+  }
 }
 
 @media (max-width: 767px){

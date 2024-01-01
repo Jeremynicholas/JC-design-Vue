@@ -8,7 +8,7 @@
                        <div class="home-container">
                            <h1>{{ pageTitle }}</h1>
                            <p>{{ description }}</p>
-                           <Button text="Go back" url="/"/>
+                           <Button text="Go back"  @click="$router.push({ path: '/' })"/>
                        </div>	
                    </div>
                </div>

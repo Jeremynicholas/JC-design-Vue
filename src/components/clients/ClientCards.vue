@@ -24,14 +24,8 @@
     .site {
         display: flex;
         flex-direction: column;
-        background: var(--background-light);
-        border-radius: 5px;
-        border: 2px solid var(--accent-blue);
-        transition: var(--timingAll);
         text-align: center;
-        box-shadow: var(--box-shadow-light);
-        overflow: hidden;
-
+        
         a {
             text-decoration: none;
         }
@@ -40,15 +34,18 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top center;;
-            height: 230px;
+            height: 330px;
+            border-radius: 5px;       
+            box-shadow: var(--box-shadow-light);
+            transition: var(--timingAll);
         }
 
         & .name {
-            padding: 30px 30px 5px 30px;
+            margin-top: 15px;
         }
     }
 
-    .site:hover {
+    .background:hover {
         box-shadow: var(--box-shadow);
         transform: scale(1.01);
     }

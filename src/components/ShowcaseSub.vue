@@ -11,7 +11,7 @@
                                 <Button text="Learn more" url="#to_next" />
                             </div>
                     
-                            <div class="columns">			
+                            <div class="columns" v-if="$route.meta.imgSrc">			
                                 <img :src="$route.meta.imgSrc" :alt="$route.meta.pageTitle"/>
                             </div>
                         </div>	
@@ -19,7 +19,6 @@
                 </div>
             </div>
     </section>
-        
 </template>
 
 <script setup >

@@ -150,6 +150,11 @@ span {
   font-family: var(--font-family);
 }
 
+.columns span {
+  color: var(--accentBlue);
+  font-weight: var(--font600);
+}
+
 .body_font {
   font: var(--bodyFont)
 }

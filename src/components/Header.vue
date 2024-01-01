@@ -12,10 +12,10 @@
 						<div class="main-menu">
 							<ul class = "nav-links">
 								<Logo id="mobileLogo" class="show-at-mob" />
-								<li><router-link :to="{path: 'about'}">About</router-link></li>
-								<li><router-link :to="{name: 'pricing'}">Pricing</router-link></li>
-								<li><router-link :to="{name: 'work'}">Work</router-link></li>
-								<li><router-link :to="{ path: '/', hash: '#enquire' }">Get in touch</router-link></li>
+								<li><router-link :to="{ path: 'about' }">About</router-link></li>
+								<li><router-link :to="{ path: 'pricing' }">Pricing</router-link></li>
+								<li><router-link :to="{ path: 'work' }">Work</router-link></li>
+								<li><RouterLink  :to="{ path: '/' }"  class="scroll-to-enquire">Get in touch</RouterLink></li>
 							<ul class ="social-icons-mobile show-at-mob-large">
 								<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
 									<i class="fab fa-linkedin-in"></i></a></li>
@@ -38,16 +38,27 @@
 <script setup>
 import Logo from './Logo.vue';
 import { RouterLink } from 'vue-router';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+import { scrollToEnquire } from '../constants';
 
+const link = ref(null);
 
 onMounted(() => {
-  //Dark & Light Toggle
+	
+//Anchor Scroll
+	link.value = document.querySelector('.scroll-to-enquire');
+		if (link.value) {
+		link.value.addEventListener('click', () => {
+			scrollToEnquire();
+		});
+	}
+
+//Dark & Light Toggle
 	document.querySelector(".theme").addEventListener ('click', () => {
 		document.body.classList.toggle('dark');
 	})
 
-
+//Mobile NAV menu
   const navSlide = () => {
 	const burger = document.querySelector('.burger');
 	const mobileMenu = document.querySelector('.main-menu');
@@ -164,6 +175,14 @@ header.sticky {
 
 .nav-links  li:hover::after {	
 	width: 100%;
+}
+
+.nav-links li:not(:nth-child(5)) .router-link-exact-active {
+	color: var(--accentBlue);
+}
+
+.nav-links li:not(:nth-child(5)):has(.router-link-exact-active)::after  {
+	background: var(--accentBlue);
 }
 
 /*-----MEDIA QUERIES @ 1024px-----*/	

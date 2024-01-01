@@ -19,8 +19,8 @@ const routes = [
         component: () => import('../views/About.vue'),
         meta: {
             title: `${SITE_NAME} | About Page`,
-            pageTitle: 'About me', 
-            description: `<p>JC Design is a <span>online web services company</span> dedicated to providing quality & innovative digital design.</p>
+            pageTitle: `About ${ SITE_NAME }`, 
+            description: `<p>JC Design is <span>an online web services company</span> dedicated to providing quality & innovative digital design.</p>
             <p>Our products are designed to optimise your business and improve your efficiency. JC Design separates itself by partnering with you to achieve your objectives with a<span>personal and flexible approach</span>.</p>`,
             imgSrc: '/images/web-design-logo.png',
         },
@@ -43,8 +43,8 @@ const routes = [
         component: () => import('../views/Work.vue'),
         meta: {
             title: `${SITE_NAME} | Work Page`,
-            pageTitle: 'My Work', 
-            description: 'This is the description for the Clients page.',
+            pageTitle: 'Recent Work', 
+            description: `<p>See some of the recent projects I have worked on below.</p>`,
         },
     },
     {
@@ -72,9 +72,13 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
-    scrollBehavior(to, from, savedPosition) {    
-        return { top: 0 };
-    }
+    scrollBehavior(to, from, savedPosition) {
+        if (to.hash) {
+          return { selector: to.hash };
+        } else {
+          return { top: 0 };
+        }
+      }
     
 })
 

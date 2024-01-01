@@ -12,7 +12,8 @@
                     <li><router-link :to="{path: 'about'}">About</router-link></li>
 					<li><router-link :to="{path: 'pricing'}">Pricing</router-link></li>
 					<li><router-link :to="{path: 'work'}">Work</router-link></li>
-					<li><router-link :to="{path: '/#enquire'}">Get in touch</router-link></li>
+					<li><RouterLink  :to="{ path: '/' }"  class="scroll-to-enquire">Get in touch
+					</RouterLink></li>
 					<li><router-link :to="{path: '/#top'}">Back to top</router-link></li>
 				</ul>
 			</div>
@@ -20,14 +21,26 @@
 </template>
 
 <script setup >
-    import { ref, onMounted } from 'vue';
-    import Logo from './Logo.vue';
+import { ref, onMounted } from 'vue';
+import Logo from './Logo.vue';
+import { scrollToEnquire } from '../constants';
 
-    const currentYear = ref('');
+const currentYear = ref('');
+const link = ref(null);
 
-    onMounted(() => {
-        currentYear.value = new Date().getFullYear().toString(); 
-    });
+onMounted(() => {
+//Get Current Year
+    currentYear.value = new Date().getFullYear().toString(); 
+
+//Anchor Scroll
+	link.value = document.querySelector('.scroll-to-enquire');
+		if (link.value) {
+		link.value.addEventListener('click', () => {
+			scrollToEnquire();
+		});
+	}
+
+});
 </script>
 
 

@@ -5,7 +5,10 @@
                 <p class="body_font">I am a client focused web designer with half a decade experience working closely with people and organisations to design, <a href="/#enquire">build and deliver a successful online presence.</a> I have a broad range of experience across the health, not-for profit and travel industries.
 </p> 
             <div class="get-intouch-container">
-                <Button icon="fas fa-fw fa-envelope" text="Get in touch" url="#enquire" />
+                <Button
+                    icon="fas fa-fw fa-envelope"
+                    text="Get in touch" 
+                    @click="scrollToEnquire"/>
                 <ButtonCopy icon="fas fa-copy" text="Copy email" />
             </div>
             <div class ="social-icons hide-at-mob-large">
@@ -24,6 +27,13 @@
 <script setup >
     import Button from '../Button.vue'
     import ButtonCopy from '../ButtonCopy.vue'
+    import VueScrollTo from 'vue-scrollto';
+
+    const { scrollTo } = VueScrollTo;
+
+    const scrollToEnquire = () => {
+        scrollTo('#enquire', 50, {easing: 'ease'});
+    };
 
 </script>
 

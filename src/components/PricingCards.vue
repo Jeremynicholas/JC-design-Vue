@@ -120,6 +120,7 @@ const props = defineProps ({
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 5px;
 
     & .icon {
         height: 20px;
