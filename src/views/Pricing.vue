@@ -1,6 +1,6 @@
 <template>
   <ShowcaseSub />
-  <Sections id="to_next">
+  <Sections id="to_next" style="z-index: 2">
     <div class ="grid">
       <div style="text-align: center; margin-bottom: var(--gapLarge);">
           <h2>Choose the right package for you.</h2>
@@ -34,6 +34,7 @@
   import Button from '../components/Button.vue'
   import ContactForm from '../components/forms/ContactForm.vue'
   import Tick from '../components/icons/Tick.vue'
+  import TickYellow from '../components/icons/TickYellow.vue'
   import Cross from '../components/icons/Cross.vue'
   
 
@@ -43,12 +44,12 @@
         price: '$800',
         hostingPrice: '+$30',
         topFeatures: [
-          { icon: markRaw(Tick), text: '5 pages' },
-          { icon: markRaw(Tick), text: 'Basic support'},
+          { icon: markRaw(TickYellow), text: '5 pages' },
+          { icon: markRaw(TickYellow), text: 'Basic support'},
           { icon: markRaw(Tick), text: 'Mobile Responcive'},
           { icon: markRaw(Cross), text: 'No eCommerce'},
           { icon: markRaw(Tick), text: '1 Form'},
-          { icon: markRaw(Tick), text: 'Basic Menu'},
+          { icon: markRaw(TickYellow), text: 'Basic Menu'},
         ],
         siteFeatures: [
           { icon: markRaw(Tick), text: 'SSL security certificates'},
@@ -56,15 +57,20 @@
         ],
         hostingFeatures: [
           { icon: markRaw(Tick), text: 'Standard Performance'},
+          { icon: markRaw(Tick), text: 'Theme & Plugin updates'},
+          { icon: markRaw(Cross), text: 'No free changes'},
+          { icon: markRaw(Tick), text: 'Additional changes charged at $150/ph'},
         ],
       },
+
+
 
       { name: 'Standard',
         description: 'Level-up with more power and enhanced features',
         price: '$1850',
         hostingPrice: '+$40',
         topFeatures: [
-          { icon: markRaw(Tick), text: '10+ pages' },
+          { icon: markRaw(Tick), text: '10 pages' },
           { icon: markRaw(Tick), text: 'Standard support'},
           { icon: markRaw(Tick), text: 'Mobile Responcive'},
           { icon: markRaw(Tick), text: 'Basic eCommerce'},
@@ -77,8 +83,13 @@
         ],
         hostingFeatures: [
           { icon: markRaw(Tick), text: 'Increased Performance'},
+          { icon: markRaw(Tick), text: 'Theme & Plugin updates'},
+          { icon: markRaw(Tick), text: '1 hour free changes /mo'},
+          { icon: markRaw(Tick), text: 'Additional changes charged at $150/ph'},
         ],
       },
+
+
 
       { name: 'Advance',
         description: 'Enjoy optimized performance & dedicated resources',
@@ -98,6 +109,9 @@
         ],
         hostingFeatures: [
           { icon: markRaw(Tick), text: 'Maximum Performance'},
+          { icon: markRaw(Tick), text: 'Theme & Plugin updates'},
+          { icon: markRaw(Tick), text: '1 hour free changes /mo'},
+          { icon: markRaw(Tick), text: 'Additional changes charged at $150/ph'},
         ],
       },
   ]);
@@ -132,8 +146,7 @@
 }
 .contact-form-popup {
   position: relative;
-  z-index: 99;
-  background: var(--background);
+  background: var(--background-light);
   padding: var(--columnPaddingNormal);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-large);
@@ -151,7 +164,7 @@
 
 .packages {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, auto);
 	list-style: none;	
 	text-align: center;
 	gap: var(--gapLarge);
@@ -160,19 +173,13 @@
 
 @media (max-width: 1024px){
   .contact-form-container {
-    top: 100%;
     height: 100%;
   }
 }
 
 @media (max-width: 767px){
-  .container {
-    overflow-x: scroll;
-    padding: var(--columnPaddingNormal);
-  }
-
   .packages {
-    width: 1100px;
+    grid-template-columns: auto;
   }
 }
 </style>

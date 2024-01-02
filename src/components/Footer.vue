@@ -33,7 +33,9 @@ onMounted(() => {
 	link.value = document.querySelector('.scroll-to-enquire-footer');
 		if (link.value) {
 		link.value.addEventListener('click', () => {
+			setTimeout(() => {
 			scrollToEnquire();
+			}, 150)
 		});
 	}
 

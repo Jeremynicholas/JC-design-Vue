@@ -17,7 +17,7 @@
                     <component :is="siteFeatures.icon" class="icon"></component> {{ siteFeatures.text }}
                 </li>
             </ul>
-            <p class="features_heading" style="margin-top: var(--gapLarge);">Hosting Features</p>
+            <p class="features_heading" style="margin-top: var(--gapLarge);">Hosting & Support</p>
             <ul class="features_list" >
                 <li v-for="hostingFeatures in pricingItem.hostingFeatures" :key="hostingFeatures">
                     <component :is="hostingFeatures.icon" class="icon"></component> {{ hostingFeatures.text }}
@@ -78,6 +78,7 @@ const props = defineProps ({
 .pricing {
     & h2 {
         margin: 20px 0 0 0;
+        font-size: var(--titleFont);
     }
 
     & p, li {
@@ -100,7 +101,7 @@ const props = defineProps ({
     }
 
     & .hosting-price::after {
-        content: ' /mo* ';
+        content: ' /mo for Hosting & Support*';
         font-size: var(--fontSizeSmall);
         font-weight: var(--font300);
     }

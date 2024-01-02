@@ -7,5 +7,5 @@ import VueScrollTo from 'vue-scrollto';
 const { scrollTo } = VueScrollTo;
 
 export const scrollToEnquire = (duration = 50) => {
-  scrollTo('#enquire', duration, { easing: 'ease-in-out' });
+  scrollTo('#enquire', duration, { easing: 'ease-out' });
 };

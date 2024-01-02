@@ -15,7 +15,7 @@
 
           <div class="form-field">
             <label>Name</label>
-            <input v-model="form.name" type="text" name="name" placeholder="Name" required>
+            <input v-model="form.businessName" type="text" name="name" placeholder="Name" required>
           </div>
 
           <div class="form-field">
@@ -25,7 +25,7 @@
 
           <div class="form-field">		
             <label>Existing Website</label>	
-            <input v-model="form.budget" type="text" name="existing-website" placeholder="Do you have an existing website? If so please enter the address.">
+            <input v-model="form.existingWebsite" type="text" name="existing-website" placeholder="Do you have an existing website? If so please enter the address.">
           </div>
 
           <div class="form-field">
@@ -46,10 +46,11 @@
 import { ref } from 'vue';
 
 const form = ref({
+  businessName: '',
   name: '',
   email: '',
+  existingWebsite: '',
   message: '',
-  budget: '',
 });
 
 const successMessage = ref('');
@@ -103,7 +104,7 @@ const handleSubmit = async () => {
 }		
 
 .form-field input	{
-	background: var(--background);
+	background: var(--background-light);
 	border-width: 0px 0px 2px 0px;
 	border-color: var(--font-color-placeholder);
 	color: var(--font-color);
@@ -117,7 +118,7 @@ const handleSubmit = async () => {
 }
 
 .form-field textarea	{
-	background: var(--background);
+	background: var(--background-light);
 	border-width: 0px 0px 2px 0px;
 	border-color: var(--font-color-placeholder);
 	font: var(--bodyFont);

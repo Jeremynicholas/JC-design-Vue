@@ -22,6 +22,7 @@ body.dark .showcase_gradient {
     --gradientColorOne: #92381f;
     --gradientColorTwo: #2e5c6e;
     --gradientColorThree: #86692b;
+    --gradientColorTransparent: rgba(0,0,0,0);
 }
 
 .showcase_gradient {
@@ -29,6 +30,7 @@ body.dark .showcase_gradient {
         --gradientColorTwo: #90e0ff;
         --gradientColorThree: #ffcb57;
         --gradientColorFour: #ab5acd;
+        --gradientColorTransparent: rgba(0,0,0,0);
         position: absolute;
         top: 0;
         bottom: 0;
@@ -60,7 +62,8 @@ body.dark .showcase_gradient {
         height: 100%;
         background: -webkit-linear-gradient(315deg, var(--gradientColorOne) 3%, var(--gradientColorTwo) 38%, var(--gradientColorTwo) 68%, var(--gradientColorFour) 98%);
         background: linear-gradient(315deg, var(--gradientColorOne) 3%, var(--gradientColorTwo) 38%, var(--gradientColorTwo) 68%, var(--gradientColorFour) 98%);
-        background: radial-gradient(var(--gradientColorOne) 40%,var(--gradientColorTwo) 60%) -620px -180px no-repeat, radial-gradient(var(--gradientColorThree) 33%,var(--gradientColorFour) 67%);
+        
+        background: radial-gradient(var(--gradientColorOne) 40%,var(--gradientColorTransparent) 60%) -620px -180px no-repeat,radial-gradient(var(--gradientColorThree) 33%,var(--gradientColorTransparent) 67%) -120px -24px no-repeat,radial-gradient(var(--gradientColorFour) 40%,var(--gradientColorTransparent) 70%) -470px 150px no-repeat,var(--gradientColorTwo);
         background-size: 400% 400%;
         background-attachment: fixed;
         animation: gradient 50s ease infinite;

@@ -53,9 +53,6 @@ onMounted(() => {
     max-width: 100%;
 }
 
-.description p span {
-    color: red!important;
-}
 
 /* body.dark .showcase_gradient {
     --gradientColorOne: #4a6028;

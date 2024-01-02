@@ -171,11 +171,15 @@ h1 {
 }
 
 h2 {
-	font-family: var(--font-family);	
+  --h2FontMin: 28;
+  --h2FontMax: 32;
+  --h2FontSize: calc(var(--h2FontMin)*1px + (var(--h2FontMax) - var(--h2FontMin))*(var(--windowWidth) - var(--viewportMin)*1px)/(var(--viewportMax) - var(--viewportMin)));
+  
+  --h2Font: var(--font600) var(--h2FontSize) var(--font-family);
+
+  font: var(--h2Font);
 	color: var(--font-color);
 	margin: 20px 0px 10px 0px;
-	font-size: calc(30px + (42 - 30) * ((100vw - 300px) / (1600 - 300)));
-	font-weight: var(--font600);
 	line-height: 1.4;
 }	
 

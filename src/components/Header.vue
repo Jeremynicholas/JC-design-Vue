@@ -2,33 +2,37 @@
     <header id="header top">
         <div class ="site_container">
 			<nav class="nav-header">
-                    <Logo />
-					<div class="burger show-at-mob-large">
-						<div class="burger-top"></div>
-						<div class="burger-middle"></div>
-						<div class="burger-bottom"></div>
-					</div>
-					<div class="menu-wrapper">
-						<div class="main-menu">
-							<ul class = "nav-links">
-								<Logo id="mobileLogo" class="show-at-mob" />
-								<li><RouterLink :to="{ path: 'about' }">About</RouterLink></li>
-								<li><RouterLink :to="{ path: 'pricing' }">Pricing</RouterLink></li>
-								<li><RouterLink :to="{ path: 'work' }">Work</RouterLink></li>
-								<li><RouterLink :to="{ path: '/' }"  class="scroll-to-enquire">Get in touch</RouterLink></li>
-							<ul class ="social-icons-mobile show-at-mob-large">
-								<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
-									<i class="fab fa-linkedin-in"></i></a></li>
-								<li><a href="https://dribbble.com/jemcam/" target="_blank" title="Go to Jeremy's Dribble profile">
-									<i class="fab fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-							</ul>
-								<li class="theme">
-									<i class="light fas fa-sun"></i>
-									<i class="dark fas fa-moon"></i>
-								</li>
-							</ul>
-						</div>		
+				<Logo />
+				<div class="burger show-at-mob-large">
+					<div class="burger-top"></div>
+					<div class="burger-middle"></div>
+					<div class="burger-bottom"></div>
+				</div>
+				<div class="menu-wrapper">
+					<div class="main-menu">
+						<ul class = "nav-links">
+							<Logo id="mobileLogo" class="show-at-mob" />
+							<li><RouterLink :to="{ path: 'about' }">About</RouterLink></li>
+							<li><RouterLink :to="{ path: 'pricing' }">Pricing</RouterLink></li>
+							<li><RouterLink :to="{ path: 'work' }">Work</RouterLink></li>
+							<li><RouterLink :to="{ 
+								path: '/' }"  
+								class="scroll-to-enquire">
+								Get in touch</RouterLink>
+							</li>
+						<ul class ="social-icons-mobile show-at-mob-large">
+							<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
+								<i class="fab fa-linkedin-in"></i></a></li>
+							<li><a href="https://dribbble.com/jemcam/" target="_blank" title="Go to Jeremy's Dribble profile">
+								<i class="fab fa-dribbble"></i></a></li>
+							<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+						</ul>
+							<li class="theme">
+								<i class="light fas fa-sun"></i>
+								<i class="dark fas fa-moon"></i>
+							</li>
+						</ul>
+					</div>		
 				</div>
 			</nav>
         </div>					     	
@@ -44,14 +48,16 @@ import { scrollToEnquire } from '../constants';
 const link = ref(null);
 
 onMounted(() => {
-	
 //Anchor Scroll
-	link.value = document.querySelector('.scroll-to-enquire');
+link.value = document.querySelector('.scroll-to-enquire');
 		if (link.value) {
 		link.value.addEventListener('click', () => {
+			setTimeout(() => {
 			scrollToEnquire();
+			}, 150)
 		});
 	}
+
 
 //Dark & Light Toggle
 	document.querySelector(".theme").addEventListener ('click', () => {

@@ -86,6 +86,10 @@
         max-width: 100%;
     }
 
+    .grid_3_columns {
+        align-items: start;
+    }
+
     .grid_3_columns .columns {
         text-align: center;
         row-gap: var(--gap);
@@ -101,6 +105,11 @@
             align-items: flex-start;
             gap: var(--gap);  
         }
+    }
+
+    .cards i {
+        font-size: 22px;
+        color: var(--accentBlue);
     }
 
     .tick {
