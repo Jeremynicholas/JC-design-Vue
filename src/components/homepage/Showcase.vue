@@ -1,6 +1,6 @@
 <template>
-    <div class="flex-row">
-        <div class="home-container">
+    <div class="grid_2_columns">
+        <div class="columns">
                 <h1 class="home-title"><span>Web solutions</span> for you and your business.</h1> 
                 <p class="body_font">I am a client focused web designer with half a decade experience working closely with people and organisations to design, <a href="/#enquire">build and deliver a successful online presence.</a> I have a broad range of experience across the health, not-for profit and travel industries.
 </p> 
@@ -21,11 +21,18 @@
 				</ul>
 		    </div>	
         </div>	
+        <div class="columns">
+            <div class="background-clear">
+                <img class="overlay" src="/images/phone-mock.png" alt="about"/>
+                <img src="/images/home-website-vector.png" alt="about"/>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup >
     import Button from '../Button.vue'
+    import Logo from '../Logo.vue'
     import ButtonCopy from '../ButtonCopy.vue'
     import VueScrollTo from 'vue-scrollto';
 
@@ -38,7 +45,14 @@
 </script>
 
 <style scoped>
-    .home-title {
+    @media (min-width: 767px) {
+    .grid_2_columns {
+        grid-template-columns: 600px auto;
+    }
+}
+
+ /*--COLUMN ONE---*/   
+ .home-title {
         --MainFontMin: 54;
         --MainFontMax: 80;
         --MainFont: calc(var(--MainFontMin)*1px + (var(--MainFontMax) - var(--MainFontMin))*(var(--windowWidth) - var(--viewportMin)*1px)/(var(--viewportMax) - var(--viewportMin)));
@@ -58,29 +72,6 @@
         }
     }
 
-    .home-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        max-width: 600px;
-        gap: var(--gap)
-    }
-    .home-slider-container {
-	    overflow: hidden;
-    }
-    .text-slides {
-        display: flex;
-        height: 100%;
-    }
-    .text-slide {
-        min-width: 100%;
-    }
-
-    .text-slides h2 {
-        font-weight: var(--font300);
-        padding: 20px 0px 20px 0px;
-    }
-
     .get-intouch-container {
         display: flex;
         justify-content: flex-start;
@@ -88,6 +79,27 @@
         gap: var(--gap);
     }
     
+
+
+ /*--COLUMN TWO---*/   
+    .overlay {
+        position: absolute;
+        width: 40%;
+        left: -20%;
+        bottom: -15%;
+    }
+    .background-clear {
+        background: rgba(255,255,255,0.6); 
+        padding: var(--columnPaddingNormal);
+        box-shadow: var(--box-shadow-large);
+        width: 600px;
+        z-index: -1;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow-large);
+        transform: translate(30%, 0%);
+    }
+
+
     .social-icons {
         position: absolute;
         top: 50%;
@@ -120,6 +132,17 @@
         color: white; 
     }    
 
+    @media (max-width: 1024px) {
+        .background-clear {
+            transform: translate(20%, 0%);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .background-clear {
+            width: 60%;
+        }
+    }
 </style>
 
 

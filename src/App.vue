@@ -1,4 +1,9 @@
 <template>
+  <div>
+    <div v-if="isLoading" class="loading-screen">
+      <!-- <Logo /> is loading... -->
+    </div>
+    <div v-else>
       <Header />
       <main>
         <gridLines />
@@ -13,20 +18,40 @@
             <Footer />
           </Sections>
   </main>
+  </div>
+</div>
 </template>
 
 <script setup >
+  import { ref, onMounted } from 'vue';
   import Header from './components/Header.vue'
   import Sections from './components/Sections.vue'
   import Footer from './components/Footer.vue'
   import gridLines from './components/gridLines.vue'
 
+  const isLoading = ref(true);
+
+  onMounted(() => {
+    setTimeout(() => {
+      isLoading.value = false;
+    }, 500);
+  });
+
 </script>
 
 <style scoped>
+.loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background);
+  }
+
 main {
   will-change: opacity;
 }
+
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.1s ease-in-out; 

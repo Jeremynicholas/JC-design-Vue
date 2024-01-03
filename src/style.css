@@ -139,6 +139,10 @@ html {
 		visibility: hidden;
 	}
 
+img {
+  max-width: 100%;
+}
+
 a {
   font-weight: var(--font600);
   font-family: var(--font-family);
@@ -229,22 +233,22 @@ main {
 }
 
 .section_container {
-position: relative;
-z-index: 1;
-display: flex;
-justify-content: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .section_container_width {
-width: 100%;
-max-width: var(--layoutWidth);
-margin: 0 auto;
-padding: 0 var(--columnPaddingNormal);
-overflow: hidden;
+  width: 100%;
+  max-width: var(--layoutWidth);
+  margin: 0 auto;
+  padding: 0 var(--columnPaddingNormal);
 }
 
 .section_container_layout {
-padding-block: var(--sectionPaddingBlock);
+  padding-block: var(--sectionPaddingBlock);
 }
 
 

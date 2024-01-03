@@ -80,16 +80,15 @@
                  <div class="columns reverse">
                         <h2 style="margin: 10px auto;">What is the process?</h2>
                         <ul class="benefits">
-                            <li><i class="fas fa-comment"></i>Initial Consult, say hello</li>
-                            <li><i class="fas fa-pen"></i>First draft</li>
-                            <li><i class="fas fa-check"></i>Complete draft</li>
-                            <li><i class="fas fa-rocket"></i>Launch & go live!</li>
-                            <li><i class="fas fa-headset"></i>Support & Maintenance</li>
+                          <li v-for="(benefit, index) in benefits" :key="index">
+                          <!-- <span class="number">{{ index + 1 }}</span> -->
+                          <i class="fas" :class="icons[index]"></i>
+                          {{ benefit }}
+                          </li>
                         </ul>
                     </div>
                     
-                    <div class="columns">			
-                         <img src="/images/phone-mock.png" :alt="$route.meta.pageTitle"/>
+                    <div class="columns process">			
                     </div>
             </div>	
     </Sections>
@@ -117,6 +116,23 @@
     import SkillsSlider from '../components/homepage/SkillsSlider.vue'
     import AnchorLine from '../components/AnchorLine.vue'
     import ContactForm from '../components/forms/ContactForm.vue'
+
+    const benefits = [
+      "Initial Consult, say hello",
+      "First draft",
+      "Complete draft",
+      "Launch & go live!",
+      "Support & Maintenance",
+    ];
+
+    const icons = [
+      "fa-comment",
+      "fa-pen",
+      "fa-check",
+      "fa-rocket",
+      "fa-headset"
+    ];
+      
 </script>
 
 <style scoped>
@@ -128,10 +144,6 @@
 
   .grid_2_columns {
     align-items: center;
-
-    & .columns img {
-      max-width: 100%;
-    }
 }
 
   .card_grid {
@@ -172,7 +184,7 @@
             display: flex;
             align-items: center;
             padding: var(--columnPaddingInline);
-            gap: var(--gap);  
+            gap: var(--gapLarge);  
             background: var(--background-light);
             border: 1px solid var(--border-color);
             border-bottom: 2px solid var(--accentBlue);
@@ -180,7 +192,11 @@
         }
 
         li i {
-          color: var(--accentBlue);
+          color: var(--light);
+          font-size: 1.5rem;
+          padding: .6rem;
+          background: var(--accentBlue);
+          border-radius: var(--border-radius-buttons);
         }
 
         li::after {
@@ -202,9 +218,22 @@
         }
     }
 
+    .process {
+      background-image: url('/images/process-vector.png');
+      height: 600px;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+
     @media (max-width: 1024px) {
       #services {
         text-align: left;
+      }
+
+      .process {
+        height: 400px;
       }
 
       .benefits {
