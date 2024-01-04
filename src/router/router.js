@@ -44,7 +44,7 @@ const routes = [
         meta: {
             title: `${SITE_NAME} | Recent Work`,
             pageTitle: 'Recent Work', 
-            description: `<p>See some of the recent projects I have worked on below. These websites span across the health, not-for profit and travel industries.</p>`,
+            description: `<p>See some of the recent projects I have worked on below. These websites span across the healthcare, not-for profit and travel industries.</p>`,
         },
     },
     {
