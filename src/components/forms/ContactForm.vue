@@ -46,10 +46,10 @@
 import { ref } from 'vue';
 const formContainer = document.querySelector('.contact-form')
 const form = ref({
-  businessName: '',
+  'business-name': '',
   name: '',
   email: '',
-  existingWebsite: '',
+  'existing-website': '',
   message: '',
 });
 
