@@ -44,7 +44,6 @@
 
 <script setup>
 import { ref } from 'vue';
-const formContainer = document.querySelector('.contact-form')
 const form = ref({
   'business-name': '',
   name: '',
