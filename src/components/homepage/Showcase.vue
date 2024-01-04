@@ -16,7 +16,7 @@
             <div class="background-clear">
                 <div class ="social-icons hide-at-mob-large">
                     <ul>
-                        <li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
+                        <li><a href="https://www.linkedin.com/in/jeremy-cameron/" target="_blank" title="Go to Jeremy's Linkedin profile">
                         <i class="fab fa-linkedin-in"></i></a></li>
                     </ul>
 		        </div>
