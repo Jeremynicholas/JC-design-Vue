@@ -1,7 +1,7 @@
 <template>
     <div class="form-style">
 
-        <form class ="contact-form"
+      <form v-if="!successMessage" class="contact-form"
               name="contact-form"
               method="post" 
               data-netlify="true"
@@ -10,12 +10,12 @@
 
           <div class="form-field">
             <label>Clinic or business Name</label>
-            <input v-model="form.name" type="text" name="business-name" placeholder="Clinic or business name">
+            <input v-model="form.businessName" type="text" name="business-name" placeholder="Clinic or business name">
           </div>
 
           <div class="form-field">
             <label>Name</label>
-            <input v-model="form.businessName" type="text" name="name" placeholder="Name" required>
+            <input v-model="form.name" type="text" name="name" placeholder="Name" required>
           </div>
 
           <div class="form-field">
@@ -44,7 +44,7 @@
 
 <script setup>
 import { ref } from 'vue';
-
+const formContainer = document.querySelector('.contact-form')
 const form = ref({
   businessName: '',
   name: '',
@@ -71,7 +71,6 @@ const handleSubmit = async () => {
 
     if (response.ok) {
       successMessage.value = 'Thank you for your submission';
-      errorMessage.value = '';
     } else {
       successMessage.value = '';
       errorMessage.value = 'Error submitting form. Please try again.';
@@ -136,7 +135,7 @@ const handleSubmit = async () => {
 .submit_btn {
         margin-top: 20px;
         background: var(--btn);
-        color: white;
+        color: var(--light);
         font-size: var(--fontSizeButtons);
         padding: 10px 15px;
         border: none;
@@ -151,10 +150,18 @@ const handleSubmit = async () => {
         background: var(--btn-hover);  
     }
 
-    .success-message {
-      background: green;
+    .success-message, .error-message {
+      margin-top: var(--gap);
+      color: var(--light);
       padding: 5px 15px;
       border-radius: var(--border-radius);
+
+    }
+    .success-message {
+      background: green;
+    }
+    .error-message {
+      background: rgb(128, 0, 0);
     }
 
 </style>

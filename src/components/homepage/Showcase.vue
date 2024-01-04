@@ -110,17 +110,18 @@
         justify-content: center;
         align-items: center;
         color: var(--font-color);
+        background: var(--background-light);
         font-size: var(--fontSizeButtons);
         padding:  10px;
         height: 20px;
         width: 20px;
         border-radius: var(--border-radius);
-        border: 1px solid var(--font-color);
+        border: 1px solid var(--dark);
         transition: var(--timingAll);
     }	
 
     .social-icons li a:hover {
-        background: var(--background-light);
+        background: var(--bg-hover);
         color: white; 
     }    
 

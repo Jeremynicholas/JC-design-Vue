@@ -20,7 +20,7 @@ html {
     --background-dark: var(--dark); 
     --background-light: #f6f9fc; 
     --background-light-blue: rgb(229, 242, 255); 
-    --background-light-hover: #dde9f9; 
+    --background-light-hover: hsl(214, 70%, 92%); 
 
     --btn: var(--dark);
     --btn-hover: var(--bg-hover);
@@ -29,8 +29,8 @@ html {
 
     --heading-color: var(--dark);
     --font-color: var(--dark);
-    --font-reverse: var(--white);
-    --font-color-hover: var(--white);
+    --font-reverse: var(--light);
+    --font-color-hover: var(--light);
     --font-color-placeholder: rgb(115, 115, 115);
 
     --grid-lines: rgb(243 243 243);
