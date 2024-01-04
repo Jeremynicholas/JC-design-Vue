@@ -10,7 +10,7 @@
 
           <div class="form-field">
             <label>Clinic or business Name</label>
-            <input v-model="form.businessName" type="text" name="business-name" placeholder="Clinic or business name">
+            <input v-model="form.businessName" type="text" name="businessName" placeholder="Clinic or business name">
           </div>
 
           <div class="form-field">
@@ -25,7 +25,7 @@
 
           <div class="form-field">		
             <label>Existing Website</label>	
-            <input v-model="form.existingWebsite" type="text" name="existing-website" placeholder="Do you have an existing website? If so please enter the address.">
+            <input v-model="form.existingWebsite" type="text" name="existingWebsite" placeholder="Do you have an existing website? If so please enter the address.">
           </div>
 
           <div class="form-field">
@@ -45,10 +45,10 @@
 <script setup>
 import { ref } from 'vue';
 const form = ref({
-  'business-name': '',
+  businessName: '',
   name: '',
   email: '',
-  'existing-website': '',
+  existingWebsite: '',
   message: '',
 });
 
