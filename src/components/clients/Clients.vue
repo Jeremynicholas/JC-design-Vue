@@ -10,6 +10,16 @@ import { ref } from "vue";
 
 const sites = ref([
   {
+    name: "African Wildlife Safaris",
+    url: "https://africanwildlifesafaris.com/",
+    image: "/images/websites/africanwildlifesafaris-cover.png",
+  },
+  {
+    name: "Natural Focus",
+    url: "https://naturalfocusaustralia.com.au/",
+    image: "/images/websites/naturalfocusaustralia-cover.jpg",
+  },
+  {
     name: "Paediatric People",
     url: "https://paediatricpeople.com.au/",
     image: "/images/websites/paediatricpeople-cover.jpg",
