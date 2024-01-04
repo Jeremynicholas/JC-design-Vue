@@ -120,7 +120,7 @@
     }	
 
     .social-icons li a:hover {
-        background: var(--btn-hover);
+        background: var(--background-light);
         color: white; 
     }    
 

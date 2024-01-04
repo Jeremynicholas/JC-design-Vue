@@ -8,8 +8,8 @@
             <div class="grid_2_columns">
                  <div class="columns reverse">
                         <h2>About {{SITE_NAME}}</h2>
-                        <p><span>{{SITE_NAME}} is an online web services company</span> dedicated to providing quality & innovative digital design.</p>
-                        <p>Our products are designed to optimise your business and improve your efficiency. {{SITE_NAME}} separates itself by partnering with you to achieve your objectives with a <span>personal and flexible approach.</span></p>
+                        <p><span>I am a freelance web desinger based in Melboune offering online web services</span> dedicated to providing quality & innovative digital design.</p>
+                        <p>My products are designed to optimise your business and improve your efficiency. {{SITE_NAME}} separates itself by partnering with you to achieve your objectives with a <span>personal and flexible approach.</span></p>
                         <SkillsSlider />
                     </div>
                     
@@ -38,7 +38,7 @@
                   <div class="bottom-content" >
                   <h3>Website design</h3>
                     <ul>
-                      <li>Begin your online presence</li>
+                      <li>Create your online presence</li>
                       <li>Modernise an existing website</li>
                       <li>Start selling products online</li>
                     </ul>
@@ -53,8 +53,8 @@
                   <h3>Backend management</h3>
                     <ul>
                       <li>Domain/Hosting Management</li>
-                      <li>Maintenance</li>
-                      <li>Email setup</li>
+                      <li>Maintenance & support</li>
+                      <li>Email setup & hosting</li>
                     </ul>
                   </div>
                 </div>	
@@ -66,8 +66,8 @@
                   <h3>Website migration</h3>
                     <ul>
                       <li>Upgrade your current hosting</li>
-                      <li>Transfer your website</li>
-                      <li>Create a subdomain or staging site</li>
+                      <li>Transfer your website hosting</li>
+                      <li>Transfer your website domain</li>
                     </ul>
                   </div>
                 </div>
@@ -98,7 +98,7 @@
 			      <div class="columns">
 					    <h2>Lets get in touch, message me for a quote today.</h2>
 					    <p>Ready to take your project to the next step? Please leave as much detail as possible and I will get back to you promptly.</p>
-					    <a href="mailto:hello@jcdesign.com.au" title="Contact me for a quote"><i class="fa fa-fw fa-envelope"></i>hello@jcdesign.com.au</a>
+					    <!-- <a href="mailto:hello@jcdesign.com.au" title="Contact me for a quote"><i class="fa fa-fw fa-envelope"></i>hello@jcdesign.com.au</a> -->
 			    </div>
 			
           <div class="columns">			
