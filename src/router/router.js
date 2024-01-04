@@ -7,9 +7,9 @@ const routes = [
         name: 'home',
         component: () => import('../views/Home.vue'),
         meta: { 
-            title: `${SITE_NAME} | Home Page`,
-            pageTitle: 'Home Page', 
-            description: 'This is the description for the home page.',
+            title: `${SITE_NAME} | Freelance Web designer Melbourne`,
+            pageTitle: 'Freelance Web designer Melbourne', 
+            description: 'Freelance web designer based in Melbourne, helping to deliver you online presence. Contact me today!'
         }, 
     },
 
@@ -18,10 +18,10 @@ const routes = [
         name: 'about',
         component: () => import('../views/About.vue'),
         meta: {
-            title: `${SITE_NAME} | About Page`,
+            title: `${SITE_NAME} | About me`,
             pageTitle: `About ${ SITE_NAME }`, 
-            description: `<p>JC Design is <span>an online web services company</span> dedicated to providing quality & innovative digital design.</p>
-            <p>Our products are designed to optimise your business and improve your efficiency. JC Design separates itself by partnering with you to achieve your objectives with <span>a personal and flexible approach</span>.</p>`,
+            description: `<p>${ SITE_NAME } is <span>an online web services company</span> dedicated to providing quality & innovative digital design.</p>
+            <p>My products are designed to optimise your business and improve your efficiency. ${ SITE_NAME } separates itself by partnering with you to achieve your objectives with <span>a personal and flexible approach</span>.</p>`,
             imgSrc: '/images/web-design-logo.png',
         },
     },
@@ -31,7 +31,7 @@ const routes = [
         component: () => import('../views/Pricing.vue'),
         meta: {
             title: `${SITE_NAME} | Pricing | How much does it cost to build a website`,
-            pageTitle: 'Pricing, how it works', 
+            pageTitle: 'Pricing, how it works.', 
             description: `<p>You will be guided through the build every step of the way and will have <span>open communication</span> throughout the whole process to make it as seamless as possible. The creation of your website will be designed from considerable experience in the industry, but ultimately <span>built to your specifications.</span></p>`,
             imgSrc: '/images/graphic-design-logo.png',
 
@@ -42,9 +42,9 @@ const routes = [
         name: 'work',
         component: () => import('../views/Work.vue'),
         meta: {
-            title: `${SITE_NAME} | Work Page`,
+            title: `${SITE_NAME} | Recent Work`,
             pageTitle: 'Recent Work', 
-            description: `<p>See some of the recent projects I have worked on below.</p>`,
+            description: `<p>See some of the recent projects I have worked on below. These websites span across the health, not-for profit and travel industries.</p>`,
         },
     },
     {
