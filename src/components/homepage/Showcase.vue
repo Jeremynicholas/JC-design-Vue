@@ -11,18 +11,15 @@
                     @click="scrollToEnquire"/>
                 <ButtonCopy icon="fas fa-copy" text="Copy email" />
             </div>
-            <div class ="social-icons hide-at-mob-large">
-			<ul>
-				<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
-					<i class="fab fa-linkedin-in"></i></a></li>
-				<li><a href="https://dribbble.com/jemcam/" target="_blank" title="Go to Jeremy's Dribble profile">
-					<i class="fab fa-dribbble"></i></a></li>
-				<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-				</ul>
-		    </div>	
         </div>	
-        <div class="columns">
+        <div class="columns">	
             <div class="background-clear">
+                <div class ="social-icons hide-at-mob-large">
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
+                        <i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+		        </div>
                 <img class="overlay" src="/images/phone-mock.png" alt="about"/>
                 <img src="/images/home-website-vector.png" alt="about"/>
             </div>
@@ -32,7 +29,6 @@
 
 <script setup >
     import Button from '../Button.vue'
-    import Logo from '../Logo.vue'
     import ButtonCopy from '../ButtonCopy.vue'
     import VueScrollTo from 'vue-scrollto';
 
@@ -93,7 +89,6 @@
         padding: var(--columnPaddingNormal);
         box-shadow: var(--box-shadow-large);
         width: 600px;
-        z-index: -1;
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow-large);
         transform: translate(30%, 0%);
@@ -101,10 +96,7 @@
 
 
     .social-icons {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        z-index: 10;
+      z-index: 99;
     }		
 
     .social-icons ul li {
