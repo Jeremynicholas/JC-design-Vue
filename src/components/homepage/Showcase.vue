@@ -133,7 +133,7 @@
 
     @media (max-width: 767px) {
         .background-clear {
-            width: 60%;
+            width: 100%;
         }
     }
 </style>

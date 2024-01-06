@@ -66,7 +66,7 @@ body.dark .showcase_gradient {
         background: radial-gradient(var(--gradientColorOne) 40%,var(--gradientColorTransparent) 60%) -620px -180px no-repeat,radial-gradient(var(--gradientColorThree) 33%,var(--gradientColorTransparent) 67%) -120px -24px no-repeat,radial-gradient(var(--gradientColorFour) 40%,var(--gradientColorTransparent) 70%) -470px 150px no-repeat,var(--gradientColorTwo);
         background-size: 400% 400%;
         background-attachment: fixed;
-        animation: gradient 50s ease infinite;
+        animation: gradient 40s ease infinite;
     }
 
     @keyframes gradient {

@@ -21,11 +21,11 @@
 								Get in touch</RouterLink>
 							</li>
 						<ul class ="social-icons-mobile show-at-mob-large">
-							<li><a href="https://www.linkedin.com/in/jeremy-cameron-12b72185/" target="_blank" title="Go to Jeremy's Linkedin profile">
+							<li><a href="https://www.linkedin.com/in/jeremy-cameron/" target="_blank" title="Go to Jeremy's Linkedin profile">
 								<i class="fab fa-linkedin-in"></i></a></li>
-							<li><a href="https://dribbble.com/jemcam/" target="_blank" title="Go to Jeremy's Dribble profile">
+							<!-- <li><a href="https://dribbble.com/jemcam/" target="_blank" title="Go to Jeremy's Dribble profile">
 								<i class="fab fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fab fa-facebook"></i></a></li> -->
 						</ul>
 							<li class="theme">
 								<i class="light fas fa-sun"></i>

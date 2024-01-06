@@ -8,7 +8,7 @@
                             <div class="columns">
                                 <h1>{{ pageTitle }}</h1>
                                 <p v-html="$route.meta.description" class="description"></p>
-                                <Button text="Learn more" url="#to_next" />
+                                <!-- <Button text="Learn more" url="#to_next" /> -->
                             </div>
                     
                             <div class="columns" v-if="$route.meta.imgSrc">			

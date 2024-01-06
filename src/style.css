@@ -283,18 +283,6 @@ main {
   gap: var(--columnPaddingNormal);
 }
 
-@media (max-width: 1024px) {
-	.grid_3_columns {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-@media (max-width: 767px) {
-	.grid_2_columns, .grid_3_columns {
-		grid-template-columns: repeat(1, 1fr);
-	}
-}
-
 .columns {
   display: grid;
   align-items: start;
@@ -305,5 +293,22 @@ main {
 
 .columns.reverse {
   order: 2;
+}
+
+
+@media (max-width: 1024px) {
+	.grid_3_columns {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+  .columns.reverse {
+    order: 0;
+  }
+}
+
+@media (max-width: 767px) {
+	.grid_2_columns, .grid_3_columns {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
