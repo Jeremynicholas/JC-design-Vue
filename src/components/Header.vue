@@ -260,10 +260,10 @@ header.sticky {
 	}
 
 	.burger div {
-		width: 22px;
+		width: 20px;
 		height: 2px;
 		background-color: var(--font-color);
-		margin: 5px;
+		margin: 4px;
 		transition: all 0.3s ease;
 	}
 
@@ -342,7 +342,7 @@ header.sticky {
 @keyframes burger-bottom {
 	0% { transform: translateY(0px); }
 	33% { transform: translateY(-7px); }
-	100% {	transform: rotate(45deg) translate(-5px,-5px); }
+	100% {	transform: rotate(45deg) translate(-4px,-4px); }
 }  
 		
 

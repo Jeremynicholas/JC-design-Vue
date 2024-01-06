@@ -88,6 +88,7 @@ html {
   @media (max-width: 767px) {
     :root {
       --gapLarge: 20px;
+      --columnPaddingNormal: 1.5rem
   
   }
 }
