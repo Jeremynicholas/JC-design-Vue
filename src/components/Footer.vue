@@ -29,15 +29,17 @@ const currentYear = ref('');
 const link = ref(null);
 
 onMounted(() => {
-//Anchor Scroll
-	link.value = document.querySelector('.scroll-to-enquire-footer');
-		if (link.value) {
-		link.value.addEventListener('click', () => {
-			setTimeout(() => {
-			scrollToEnquire();
-			}, 200)
-		});
-	}
+  // Anchor Scroll
+  link.value = document.querySelector('.scroll-to-enquire-footer');
+  if (link.value) {
+    link.value.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      setTimeout(() => {
+        scrollToEnquire();
+      }, 210);
+    });
+  }
 
 	//Get Current Year
     currentYear.value = new Date().getFullYear().toString(); 

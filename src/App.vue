@@ -17,9 +17,9 @@
           <Sections>
             <Footer />
           </Sections>
-  </main>
+      </main>
+    </div>
   </div>
-</div>
 </template>
 
 <script setup >
@@ -58,7 +58,7 @@ main {
 
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .fade-enter, .fade-leave-to {

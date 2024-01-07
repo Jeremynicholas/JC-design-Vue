@@ -50,13 +50,15 @@ const link = ref(null);
 onMounted(() => {
 //Anchor Scroll
 link.value = document.querySelector('.scroll-to-enquire');
-		if (link.value) {
-		link.value.addEventListener('click', () => {
-			setTimeout(() => {
-			scrollToEnquire();
-			}, 200)
-		});
-	}
+  if (link.value) {
+    link.value.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      setTimeout(() => {
+        scrollToEnquire();
+      }, 210);
+    });
+  }
 
 
 //Dark & Light Toggle
@@ -140,9 +142,9 @@ header.sticky {
 	padding: 10px var(--columnPaddingNormal) 10px;
 }
 
-.nav .fa, .far, .fas {
+/* .nav .fa, .far, .fas {
 	padding-right: 10px;
-}
+} */
 
 .fa-fw {
 	padding-right: 10px;
@@ -211,7 +213,7 @@ header.sticky {
 		transform: translateY(-100%);
 		transform-origin: 50% 0;
 		margin-left: auto;
-		padding: 20px;
+		padding: 15px;
 		opacity: 0;
 		width: calc(50% + 20px - 4px);
 		z-index: 9;
