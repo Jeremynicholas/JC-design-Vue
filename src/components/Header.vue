@@ -54,7 +54,7 @@ link.value = document.querySelector('.scroll-to-enquire');
 		link.value.addEventListener('click', () => {
 			setTimeout(() => {
 			scrollToEnquire();
-			}, 150)
+			}, 200)
 		});
 	}
 
@@ -260,10 +260,11 @@ header.sticky {
 	}
 
 	.burger div {
-		width: 20px;
+		width: 17px;
 		height: 2px;
 		background-color: var(--font-color);
-		margin: 4px;
+		border-radius: 50px;
+		margin: 3px;
 		transition: all 0.3s ease;
 	}
 
@@ -336,13 +337,13 @@ header.sticky {
 @keyframes burger-top {
 	0% { transform: translateY(0px); }
 	33% { transform: translateY(7px); }
-	100% {	transform: rotate(-45deg) translate(-5px,5px); }
+	100% {	transform: rotate(-45deg) translate(-3px,4px); }
 }
 
 @keyframes burger-bottom {
 	0% { transform: translateY(0px); }
 	33% { transform: translateY(-7px); }
-	100% {	transform: rotate(45deg) translate(-4px,-4px); }
+	100% {	transform: rotate(45deg) translate(-3px,-4px); }
 }  
 		
 

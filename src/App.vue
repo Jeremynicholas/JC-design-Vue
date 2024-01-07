@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="isLoading" class="loading-screen">
-      <!-- <Logo /> is loading... -->
+       <img src="/images/loading.gif" />
     </div>
     <div v-else>
       <Header />
@@ -46,6 +46,10 @@
     justify-content: center;
     height: 100vh;
     background-color: var(--background);
+
+    img {
+      width: 20px;
+    }
   }
 
 main {
@@ -54,7 +58,7 @@ main {
 
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.1s ease-in-out; 
+  transition: opacity 0.1s ease-in-out;
 }
 
 .fade-enter, .fade-leave-to {

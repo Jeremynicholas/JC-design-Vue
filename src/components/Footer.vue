@@ -35,7 +35,7 @@ onMounted(() => {
 		link.value.addEventListener('click', () => {
 			setTimeout(() => {
 			scrollToEnquire();
-			}, 150)
+			}, 200)
 		});
 	}
 

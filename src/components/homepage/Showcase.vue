@@ -2,7 +2,7 @@
     <div class="grid_2_columns">
         <div class="columns">
                 <h1 class="home-title"><span>Web solutions</span> for you and your business.</h1> 
-                <p class="body_font">I am a client focused web designer with half a decade experience working closely with people and organisations to design, <a href="/#enquire">build and deliver a successful online presence.</a> I have a broad range of experience across the health, not-for profit and travel industries.
+                <p class="body_font"><span>Freelance web designer</span> based in Melbourne offering online web services dedicated to providing quality & innovative digital design.
 </p> 
             <div class="get-intouch-container">
                 <Button

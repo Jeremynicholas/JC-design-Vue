@@ -8,7 +8,7 @@
             <div class="grid_2_columns">
                  <div class="columns reverse">
                         <h2>About {{SITE_NAME}}</h2>
-                        <p><span>I am a freelance web desinger based in Melboune offering online web services</span> dedicated to providing quality & innovative digital design.</p>
+                        <p>I am a <span>client focused web designer</span> with half a decade experience working closely with people and organisations to design, <a href="/#enquire">build and deliver a successful online presence.</a> I have a broad range of experience across the healthcare, not-for profit and travel industries.</p>
                         <p>My products are designed to optimise your business and improve your efficiency. {{SITE_NAME}} separates itself by partnering with you to achieve your objectives with a <span>personal and flexible approach.</span></p>
                         <SkillsSlider />
                     </div>

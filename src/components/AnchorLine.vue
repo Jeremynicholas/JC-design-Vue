@@ -30,7 +30,7 @@
 
   @media (max-width: 1024px) {
     .anchor-line span {
-      margin-left: -16px;
+      margin-left: -12px;
     }
   }
 
