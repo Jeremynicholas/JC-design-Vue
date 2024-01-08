@@ -43,7 +43,6 @@ watch(() => route.name, (newMeta) => {
 onMounted(() => {
   pageTitle.value = route.meta.pageTitle
   description.value = route.meta.description
-
 });
 
 </script>

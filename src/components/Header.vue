@@ -12,11 +12,14 @@
 					<div class="main-menu">
 						<ul class = "nav-links">
 							<Logo id="mobileLogo" class="show-at-mob" />
-							<li><RouterLink :to="{ path: 'about' }">About</RouterLink></li>
-							<li><RouterLink :to="{ path: 'pricing' }">Pricing</RouterLink></li>
-							<li><RouterLink :to="{ path: 'work' }">Work</RouterLink></li>
-							<li><RouterLink :to="{ 
-								path: '/' }"  
+							<li><RouterLink 
+								:to="{ path: 'about' }">About</RouterLink></li>
+							<li><RouterLink 
+								:to="{ path: 'pricing' }">Pricing</RouterLink></li>
+							<li><RouterLink 
+								:to="{ path: 'work' }">Work</RouterLink></li>
+							<li><RouterLink 
+								:to="{ path: '/' }"
 								class="scroll-to-enquire">
 								Get in touch</RouterLink>
 							</li>
@@ -43,23 +46,23 @@
 import Logo from './Logo.vue';
 import { RouterLink } from 'vue-router';
 import { onMounted, ref } from 'vue';
-import { scrollToEnquire } from '../constants';
+import VueScrollTo from 'vue-scrollto';
 
 const link = ref(null);
 
 onMounted(() => {
+
 //Anchor Scroll
 link.value = document.querySelector('.scroll-to-enquire');
-  if (link.value) {
-    link.value.addEventListener('click', (event) => {
-      event.preventDefault();
+if (link.value) {
+  link.value.addEventListener('click', (event) => {
+    event.preventDefault();
 
-      setTimeout(() => {
-        scrollToEnquire();
-      }, 210);
-    });
-  }
-
+    setTimeout(() => {
+      VueScrollTo.scrollTo('#enquire', { easing: 'ease-out' });
+    }, 400);
+  });
+}
 
 //Dark & Light Toggle
 	document.querySelector(".theme").addEventListener ('click', () => {
@@ -182,7 +185,7 @@ header.sticky {
 	transition: 0.3s;
 }
 
-.nav-links  li:hover::after {	
+.nav-links li:hover::after {	
 	width: 100%;
 }
 
@@ -194,7 +197,18 @@ header.sticky {
 	background: var(--accentBlue);
 }
 
-/*-----MEDIA QUERIES @ 1024px-----*/	
+.nav-links li a img {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+	.nav-links li a img {
+		display: flex;
+		width: 30px;
+	}
+}
+
+/*-----MEDIA QUERIES 1024px-----*/	
 @media (max-width: 1024px) {
 	.menu-wrapper {
 		visibility: hidden;
@@ -239,6 +253,12 @@ header.sticky {
 		height: 0%;
 		padding-top: 60px;
 		box-shadow: var(--box-shadow-large);
+
+		& .theme i {
+			margin-left: auto;
+			margin-right: 15px;
+    		margin-bottom: 10px;
+		}
 	}
 
 	.nav-links li {
@@ -247,6 +267,8 @@ header.sticky {
 	}
 
 	.nav-links li a {
+		display: flex;
+		gap: 10px;
 		padding: 8px 20px;
 		width: 100%
 	}
@@ -294,7 +316,7 @@ header.sticky {
 	}
 }
 
-
+/*--- MEDIA QUERIES 767px --- */
 @media (max-width: 767px) {
 	.jc-logo.show-at-mob {
 		position: absolute;
@@ -310,12 +332,6 @@ header.sticky {
 
 	.nav-links {
 		padding-top: 70px;
-		
-		& .theme i {
-			margin-left: auto;
-			margin-right: 10px;
-    		margin-bottom: 5px;
-		}
 	}
 }
 

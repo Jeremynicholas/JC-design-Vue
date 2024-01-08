@@ -12,8 +12,11 @@
                     <li><RouterLink :to="{ path: 'about' }">About</RouterLink></li>
 					<li><RouterLink :to="{ path: 'pricing' }">Pricing</RouterLink></li>
 					<li><RouterLink :to="{ path: 'work' }">Work</RouterLink></li>
-					<li><RouterLink :to="{ path: '/' }"  class="scroll-to-enquire-footer">Get in touch</RouterLink></li>
-					<li><RouterLink :to="{ path: '/#top' }">Back to top</RouterLink></li>
+					<li><RouterLink
+						:to="{ path: '/' }" 
+						class="scroll-to-enquire-footer"
+						>Get in touch</RouterLink></li>
+					<li><a style="cursor: pointer;" @click="backToTop">Back to top</a></li>
 				</ul>
 			</div>
     </footer>
@@ -23,23 +26,28 @@
 import Logo from './Logo.vue';
 import { RouterLink } from 'vue-router';
 import { onMounted, ref } from 'vue';
-import { scrollToEnquire } from '../constants';
+import VueScrollTo from 'vue-scrollto';
 
 const currentYear = ref('');
+
+const backToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 const link = ref(null);
 
 onMounted(() => {
   // Anchor Scroll
   link.value = document.querySelector('.scroll-to-enquire-footer');
-  if (link.value) {
-    link.value.addEventListener('click', (event) => {
-      event.preventDefault();
+if (link.value) {
+  link.value.addEventListener('click', (event) => {
+    event.preventDefault();
 
-      setTimeout(() => {
-        scrollToEnquire();
-      }, 210);
-    });
-  }
+    setTimeout(() => {
+      VueScrollTo.scrollTo('#enquire', { easing: 'ease-out' });
+    }, 400);
+  });
+}
 
 	//Get Current Year
     currentYear.value = new Date().getFullYear().toString(); 

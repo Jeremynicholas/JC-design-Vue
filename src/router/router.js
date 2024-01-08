@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import VueScrollTo from 'vue-scrollto';
+import { nextTick } from 'vue';
+
 import { SITE_NAME } from '../constants.js'
+
 
 const routes = [
     {
@@ -74,14 +78,13 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
     scrollBehavior(to, from, savedPosition) {
-      if (savedPosition) {
-        return savedPosition;
+      if (to.name === 'home') {
       } else {
-        // Scroll to the top by default
-        return { top: 0 };
+        return { top: 0, behavior: 'smooth' };
       }
-    }
+    },
   });
+    
 
 
 router.beforeEach((to, from, next) => {

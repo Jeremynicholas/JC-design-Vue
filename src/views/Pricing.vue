@@ -150,7 +150,7 @@
   padding: var(--columnPaddingNormal);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-large);
-  transform: translateY(50%);
+  transform: translateY(25%);
   max-width: 600px;
   margin: auto;
 }
