@@ -51,7 +51,7 @@ onMounted(() => {
 <style scoped>
     @media (max-width: 767px) {
     .columns.flip-mob img {
-        max-width: 20%;
+        max-width: 40%;
     }
 }
 

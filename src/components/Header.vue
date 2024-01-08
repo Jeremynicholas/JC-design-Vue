@@ -158,9 +158,10 @@ header.sticky {
 	padding-left: 0px;
 }		
 
-.nav-links li{
+.nav-links li {
 	list-style: none;
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
 	padding: 8px 20px;
 	position: relative;
 }
@@ -240,7 +241,17 @@ header.sticky {
 		box-shadow: var(--box-shadow-large);
 	}
 
-	.nav-links li:not(.social-icons-mobile li, .theme) {
+	.nav-links li {
+		padding: 0;
+		width: 100%;
+	}
+
+	.nav-links li a {
+		padding: 8px 20px;
+		width: 100%
+	}
+
+	.nav-links li a:not(.social-icons-mobile li a, .theme) {
 		border-bottom: 1px dashed var(--border-color);
 		width: 100%;
 	}
@@ -280,10 +291,6 @@ header.sticky {
 		display: flex;
 		bottom: 20px;
 		opacity: 1;
-
-		& li {
-			padding: 20px 20px;
-		}	
 	}
 }
 
@@ -304,8 +311,10 @@ header.sticky {
 	.nav-links {
 		padding-top: 70px;
 		
-		& .theme {
+		& .theme i {
 			margin-left: auto;
+			margin-right: 10px;
+    		margin-bottom: 5px;
 		}
 	}
 }
