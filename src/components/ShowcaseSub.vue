@@ -11,7 +11,7 @@
                                 <!-- <Button text="Learn more" url="#to_next" /> -->
                             </div>
                     
-                            <div class="columns" v-if="$route.meta.imgSrc">			
+                            <div class="columns flip-mob" v-if="$route.meta.imgSrc">			
                                 <img :src="$route.meta.imgSrc" :alt="$route.meta.pageTitle"/>
                             </div>
                         </div>	
@@ -49,10 +49,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.grid_2_columns .columns img {
-    max-width: 100%;
+    @media (max-width: 767px) {
+    .columns.flip-mob img {
+        max-width: 20%;
+    }
 }
-
 
 /* body.dark .showcase_gradient {
     --gradientColorOne: #4a6028;

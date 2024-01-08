@@ -13,8 +13,7 @@
                         <SkillsSlider />
                     </div>
                     
-                    <div class="columns">			
-                         <img src="/images/about-us.png" alt="about"/>
+                    <div class="columns about">			
                     </div>
             </div>	
     </Sections>
@@ -34,7 +33,7 @@
           <div class="grid_3_columns card_grid">						
             <div class ="cards columns">
                 <div>
-                  <img src="/public/images/web-design-logo.png">
+                  <img src="/images/web-design-icon.png">
                   <div class="bottom-content" >
                   <h3>Website design</h3>
                     <ul>
@@ -48,7 +47,7 @@
             
             <div class ="cards columns">
                 <div>
-                  <img src="/public/images/graphic-design-logo.png">
+                  <img src="/images/maintenance-icon.png">
                   <div class="bottom-content">
                   <h3>Backend management</h3>
                     <ul>
@@ -61,7 +60,7 @@
             </div>	
             <div class ="cards columns">
                 <div>
-                  <img src="/public/images/product-design-logo.png">
+                  <img src="/images/hosting-icon.png">
                   <div class="bottom-content">
                   <h3>Website migration</h3>
                     <ul>
@@ -222,6 +221,14 @@
       background-image: url('/images/process-vector.png');
       height: 600px;
       background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .about {
+      background-image: url('/images/about-us.png');
+      height: 400px;
+      background-size: contain;
       background-position: center center;
       background-repeat: no-repeat;
     }

@@ -12,8 +12,8 @@
                         </ul>
                     </div>
                     
-                    <div class="columns">			
-                         <img src="/images/about-us.png" :alt="$route.meta.pageTitle"/>
+                    <div class="columns flip-mob">			
+                         <img src="/images/benefits.png" :alt="$route.meta.pageTitle"/>
                     </div>
             </div>	
     </Sections>
@@ -85,6 +85,7 @@
     .grid_2_columns .columns img {
         max-width: 100%;
     }
+    
 
     .grid_3_columns {
         align-items: start;
@@ -122,5 +123,6 @@
         display: grid;
         gap: var(--gap);
     }
+
 </style>
 

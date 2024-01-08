@@ -311,5 +311,9 @@ main {
 	.grid_2_columns, .grid_3_columns {
 		grid-template-columns: repeat(1, 1fr);
 	}
+
+  .columns.flip-mob {
+    order: -1;
+  }  
 }
 
