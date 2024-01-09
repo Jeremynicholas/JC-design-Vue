@@ -14,7 +14,7 @@
               </div>
             </Transition>
           </RouterView>
-          <Sections>
+          <Sections style="background: var(--background-white-dark);">
             <Footer />
           </Sections>
       </main>

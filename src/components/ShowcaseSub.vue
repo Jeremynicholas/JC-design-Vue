@@ -22,7 +22,6 @@
 </template>
 
 <script setup >
-import Button from '../components/Button.vue'
 import AnchorLine from '../components/AnchorLine.vue'
 import { ref, onMounted, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';

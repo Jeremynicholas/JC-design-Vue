@@ -13,11 +13,11 @@
 						<ul class = "nav-links">
 							<Logo id="mobileLogo" class="show-at-mob" />
 							<li><RouterLink 
-								:to="{ path: 'about' }">About</RouterLink></li>
+								:to="{ path: '/about' }">About</RouterLink></li>
 							<li><RouterLink 
-								:to="{ path: 'pricing' }">Pricing</RouterLink></li>
+								:to="{ path: '/pricing' }">Pricing</RouterLink></li>
 							<li><RouterLink 
-								:to="{ path: 'work' }">Work</RouterLink></li>
+								:to="{ path: '/work' }">Work</RouterLink></li>
 							<li><RouterLink 
 								:to="{ path: '/' }"
 								class="scroll-to-enquire">

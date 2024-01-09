@@ -52,6 +52,88 @@ const routes = [
             imgSrc: '/images/work.png',
         },
     },
+
+    /*--- PAYMENTS ---*/
+    {
+        path: '/payments',
+        name: 'payments',
+        component: () => import('../views/payments/Payments.vue'),
+        meta: {
+            title: `${SITE_NAME} | Payment Links`,
+            pageTitle: 'Payment Links', 
+        },
+    },
+    {
+        path: '/website-basic',
+        name: 'website-basic',
+        component: () => import('../views/payments/WebsiteBasic.vue'),
+        meta: {
+            title: `${SITE_NAME} | Website Basic`,
+            pageTitle: 'Basic Website',
+            packagePrice: 'AUD $800',
+            buttonUrl: 'https://buy.stripe.com/cN27vE0z37jvfIIeV1',
+        },  
+    } , 
+    {
+        path: '/website-standard',
+        name: 'website-standard',
+        component: () => import('../views/payments/WebsiteStandard.vue'),
+        meta: {
+            title: `${SITE_NAME} | Website Standard`,
+            pageTitle: 'Standard Website',
+            packagePrice: 'AUD $1,850',
+            buttonUrl: 'https://buy.stripe.com/6oE5nw4PjavHdAAaEJ',
+        }
+      },
+    {
+        path: '/website-advance',
+        name: 'website-advance',
+        component: () => import('../views/payments/WebsiteAdvance.vue'),
+        meta: {
+            title: `${SITE_NAME} | Website Advance`,
+            pageTitle: 'Advance Website',
+            packagePrice: 'AUD $2,850',
+            buttonUrl: 'https://buy.stripe.com/9AQ3fobdH5bneEEcMS',
+        }
+      },
+    {
+        path: '/web-hosting-basic',
+        name: 'web-hosting-basic',
+        component: () => import('../views/payments/WebHostingBasic.vue'),
+        meta: {
+            title: `${SITE_NAME} | Web Hosting Basic`,
+            pageTitle: 'Basic Web Hosting',
+            packagePrice: 'AUD $30',
+            perMonth: true,
+            buttonUrl: 'https://buy.stripe.com/28og2achL0V7gMM289',
+        },  
+    } , 
+    {
+        path: '/web-hosting-standard',
+        name: 'web-hosting-standard',
+        component: () => import('../views/payments/WebHostingStandard.vue'),
+        meta: {
+            title: `${SITE_NAME} | Web Hosting Standard`,
+            pageTitle: 'Standard Web Hosting',
+            packagePrice: 'AUD $40',
+            perMonth: true,
+            buttonUrl: 'https://buy.stripe.com/5kA7vEftX33fgMM6oq',
+        }
+      },
+    {
+        path: '/web-hosting-advance',
+        name: 'web-hosting-advance',
+        component: () => import('../views/payments/WebHostingAdvance.vue'),
+        meta: {
+            title: `${SITE_NAME} | Web Hosting Advance`,
+            pageTitle: 'Advance Web Hosting',
+            packagePrice: 'AUD $50',
+            perMonth: true,
+            buttonUrl: 'https://buy.stripe.com/7sIcPY1D76frfII28c',
+        }
+      },
+
+    /*--- FORM PAGES ---*/
     {
         path: '/thanks',
         name: 'success',
@@ -62,6 +144,8 @@ const routes = [
         name: 'fail',
         component: () => import('../components/forms/SubmissionFail.vue'),
     },
+
+    /*--- 404 ---*/
     {
         path: '/:pathMatch(.*)*',
         name: '404',

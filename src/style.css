@@ -18,6 +18,7 @@ html {
 
     --background: #f6f9fc;
     --background-dark: var(--dark); 
+    --background-white-dark: #ffffff; 
     --background-light: #f6f9fc; 
     --background-light-blue: rgb(229, 242, 255); 
     --background-light-hover: hsl(214, 70%, 92%); 
@@ -46,6 +47,9 @@ html {
     --gapSmall: 10px;
     --gap: 15px;
     --gapLarge: 30px;
+
+    --paddingNormal: 15px;
+    --paddingLarge: 30px;
 
     --viewportMin: 600;
     --viewportMax: 1112;
@@ -104,7 +108,8 @@ html {
     color: var(--greyDark);
     --accentBlue: rgb(64, 153, 178);
   --background: var(--dark);
-  --background-light: rgb(55, 64, 70);;
+  --background-white-dark: rgb(55, 64, 70);
+  --background-light: rgb(55, 64, 70);
   --background-dark: rgb(202, 202, 202);
   --background-light-blue: rgb(41, 52, 61); 
   --heading-color: rgb(202, 202, 202);
@@ -297,6 +302,7 @@ main {
 }
 
 
+/*----- MEDIA QUERIES 1024px -----*/
 @media (max-width: 1024px) {
 	.grid_3_columns {
 		grid-template-columns: repeat(2, 1fr);
