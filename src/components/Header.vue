@@ -3,10 +3,12 @@
         <div class ="site_container">
 			<nav class="nav-header">
 				<Logo />
-				<div class="burger show-at-mob-large">
+				<div class="burger_container">
+					<div class="burger show-at-mob-large">
 					<div class="burger-top"></div>
 					<div class="burger-middle"></div>
 					<div class="burger-bottom"></div>
+				</div>
 				</div>
 				<div class="menu-wrapper">
 					<div class="main-menu">
@@ -129,7 +131,7 @@ header {
     left: 0;
     width: 100%;
 	height: 80px;
-	background: var(--background);
+	background: var(--background-white-dark);
     border-bottom: 1px solid var(--border-color);
 	transition: all .5s ease;
 }
@@ -288,7 +290,25 @@ header.sticky {
 	}
 	
 
+	.burger_container {
+		position: relative;
+		height: 25px;
+		width: 40px;
+		background: var(--background);
+		border-radius: var(--border-radius-buttons);
+		margin-right: -10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: var(--timingAll);
+	}
+
+	.burger_container:hover {
+			background: #c7d1dc6f;
+		}
+
 	.burger {
+		position: absolute;
 		display: block;
 		cursor: pointer;
 		z-index: 10;
